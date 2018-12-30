@@ -13,29 +13,27 @@
       <div class="modal-body-signup">
         <div class="row">
         	<div class="col-sm-12 col-md-12">
-        		 {!! Form::open(array( null, null, 'class'=>'form-horizontal','method'=>'POST','id'=>'signupForm', 'onsubmit' => 'event.preventDefault(); return false;')) !!}
-             
-
+        	   <form id="signupForm" class="form-horizontal" method="POST" onsubmit="event.preventDefault();">
         			<div class="form-group">
-        				{!! Form::label('email', 'E-MAIL',array('class'=>'required')); !!}
-        	            {!! Form::email('email',null,array('required' => 'required','class'=>'form-control','id'=>'email','name'=>'email')) !!}
+        			    <label for="email" class="required">EMAIL</label>
+        				<input required type="email" id="signup-email" name="email" class="form-control required">
 					</div>
 					<div class="form-group">
-						{!! Form::label('password', 'PASSWORD',array('class'=>'required')); !!}
-						{!! Form::text('password',null,array('required' => 'required','class'=>'form-control','id'=>'password','name'=>'password','minlength' => '8')) !!}
+					    <label for="password" class="required">PASSWORD</label>
+        				<input required type="password" id="signup-password" name="password" class="form-control required" minlength=8>
 					</div>
 					<div class="form-group">
-						{!! Form::label('confirm-password', 'CONFIRM PASSWORD',array('class'=>'required')); !!}
-						{!! Form::text('confirm-password',null,array('required' => 'required','class'=>'form-control','id'=>'confirm-password','name'=>'confirm_password','minlength' => '8')) !!}
+					    <label for="email" class="required">CONFIRM PASSWORD</label>
+        				<input required type="password" id="confirm-password" name="confirm-password" class="form-control required" minlength=8>
 					</div>
 					<button type="submit" class="btn common pink-btn">SIGN UP WITH EMAIL</button>
 					
 					<button type="submit" class="btn common blue">SIGN UP WITH FACEBOOK</button>
-        		 {!! Form::close() !!}
+        		 </form>
         		 
         		<div class="terms-conditions">
-            	    <div>By creating your Fuynches account you agree to our <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a></div>
-            	    <div>Have an account? <a href="#">Sign In</a></div>
+            	    <div>By creating your Fynches account you agree to our <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a></div>
+            	    <div>Have an account? <a href="#" id="sig_up" data-toggle="modal" data-target="#largeModalSI">Sign In</a></div>
         	    </div>
 						 <div id="signupSuccessMessage"></div>
 						 <div id="signupErrorMessage"></div> 

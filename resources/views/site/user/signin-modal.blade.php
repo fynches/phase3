@@ -13,25 +13,25 @@
       <div class="modal-body-signup">
         <div class="row">
         	<div class="col-sm-12 col-md-12">
-        		 {!! Form::open(array(null, null, 'class'=>'form-horizontal','method'=>'POST','id'=>'signinForm', 'onsubmit' => 'event.preventDefault(); return false;')) !!}
+        	    <form id="signinForm" id="signinForm" class="form-horizontal" method="POST" onsubmit="event.preventDefault();">
              {{ csrf_field() }}
-
         			<div class="form-group">
-        				{!! Form::label('email', 'E-MAIL',array('class' =>'required')); !!}
-        	            {!! Form::email('email',null,array('class'=>'form-control','id'=>'email','name'=>'login_email','required' =>'required')) !!}
+        			    <label for="email" class="required">E-MAIL</label>
+        				<input required type="email" id="signin-email" name="login_email" class="form-control required">
 					</div>
 					<div class="form-group">
-						{!! Form::label('password', 'PASSWORD',array('class' =>'required')); !!}
-						{!! Form::text('password',null,array('class'=>'form-control','id'=>'password','name'=>'login_password','required' =>'required','type')) !!}
+					    <label for="password" class="required">PASSWORD</label>
+        				<input required type="text" id="signin-password" name="login_password" class="form-control required" minlength=8>
+        				<p class="text-right"><a href="#" data-toggle="modal" id="forgot_pass" data-target="#forgot_password" style="color:#FF0055 !important">Forgot Password?</a></p>
 					</div>
 					<button type="submit" class="btn common pink-btn">SIGN IN WITH EMAIL</button>
 					
 					<button type="submit" class="btn common blue">SIGN IN WITH FACEBOOK</button>
-        		 {!! Form::close() !!}
+        		</form>
         		 
         		<div class="terms-conditions">
             	    <div>By creating your Fuynches account you agree to our <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a></div>
-            	    <div>Have an account? <a href="#">Sign In</a></div>
+            	    <div>Dont have have an account? <a href="#" id="sig_in" data-toggle="modal" data-target="#largeModalS">Sign Up</a></div>
         	    </div>
 						 <div id="signupSuccessMessage"></div>
 						 <div id="signupErrorMessage"></div> 

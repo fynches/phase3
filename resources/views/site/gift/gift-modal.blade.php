@@ -21,30 +21,58 @@
               </li>
             </ul>
         </div>
+        
+        
+        
+        
         <div class="col-md-6">
-            <h1>One Month Youth Membership</h1>
+            <h1 id="hdgift">One Month Youth Membership</h1>
             <h4><strong>AGES</strong> 13 - 17</h4>
             <div class="col-md-6" style="padding-left:0">
-                <h4><a href="" GIFT DESCRIPTION>GIFT DESCRIPTION</a></h4>
+                <h4><a id="gifts">GIFT DESCRIPTION</a></h4>
             </div>
             <div class="col-md-6">
-                <h4><a href="" GIFT DESCRIPTION>BUSINESS INFO</a></h4>
+                <h4><a id="business">BUSINESS INFO</a></h4>
             </div>
-            <div id="info">
-            <p>
-                <strong>Description</strong><br>
-                A one month monthly membership to Mission Cliffs Climbing. Mission Cliffs youth climbing membership offers kids a chance
-                to build climbing skills, make friends, and have a blast!
-                <br><br>
-                help your child learn the fundamentals of climbing, including belaying, knot craft, basic climbing technique, bouldering, and more.
-            </p>
-        </div>
-            <p>
-                <Strong>Details</Strong><br>
-                $119.99: 2 weeks of delivery<br>
-                $239.99: 4 weeks of delivery<br>
-                $359.99: 6 weeks of delivery<br>
-            </p>
+         
+                
+            <div id="gift_descrip">
+                <p>
+                    <strong>Description</strong><br>
+                    A one month monthly membership to Mission Cliffs Climbing. Mission Cliffs youth climbing membership offers kids a chance
+                    to build climbing skills, make friends, and have a blast!
+                    <br><br>
+                    help your child learn the fundamentals of climbing, including belaying, knot craft, basic climbing technique, bouldering, and more.
+                </p>
+          
+                <p>
+                    <Strong>Details</Strong><br>
+                    $119.99: 2 weeks of delivery<br>
+                    $239.99: 4 weeks of delivery<br>
+                    $359.99: 6 weeks of delivery<br>
+                </p>
+            </div>
+            
+            
+             <div id="bus_descrip" style="display:none">
+                <p>
+                    <strong>Business Info</strong><br>
+                    A one month monthly membership to Mission Cliffs Climbing. Mission Cliffs youth climbing membership offers kids a chance
+                    to build climbing skills, make friends, and have a blast!
+                    <br><br>
+                    help your child learn the fundamentals of climbing, including belaying, knot craft, basic climbing technique, bouldering, and more.
+                </p>
+          
+                <p>
+                    <Strong>Details</Strong><br>
+                    $119.99: 2 weeks of delivery<br>
+                    $239.99: 4 weeks of delivery<br>
+                    $359.99: 6 weeks of delivery<br>
+                </p>
+            </div>
+            
+            
+            
         <div class="col-md-6">
             <div class="row">
                 <button class="btn btn-primary yellow_submit" id="add-to-gifts">ADD TO GIFTS</button>

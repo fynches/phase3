@@ -10,6 +10,7 @@ use App\User;
 use App\Event;
 use App\UserMeta;
 use App\ChildInfo;
+use App\GiftPage;
 
 
 class AccountController extends Controller
@@ -24,9 +25,7 @@ class AccountController extends Controller
             
         } else {
             
-         $user = User::find(2);
-            
-            return view('site.account.account-info', compact('user'));
+            return redirect()->route('home');
         
         }
     }
@@ -98,6 +97,15 @@ class AccountController extends Controller
         
         $current_password = $request->cpass;
         $new_password = $request->npass;
+        $nocn = $request->nocn;
+        
+        if($nocn == 1) {
+            
+        $user->password = Hash::make($new_password);
+        $user->save();
+        
+        return response()->json(['update' => 'Success']);
+        }
         
         if (Hash::check($current_password, $user->password)) {
 
@@ -123,19 +131,25 @@ class AccountController extends Controller
             $host_lname = $request->host_lname;
             $child_fname = $request->child_fname;
             $child_age = $request->child_age;
-        
-  
-        $userMeta = Event::updateOrCreate(
-            ['user_id' => $id],
-            ['user_id' => $id, 'first_name' =>  $host_fname, 
-            'last_name' => $host_lname
-            ]
-        );
-        
-        $userMeta = ChildInfo::updateOrCreate(
-            ['user_id' => $id],
+            
+        $child = ChildInfo::updateOrCreate(
+            ['user_id' => $id,'first_name' =>  $child_fname],
             ['user_id' => $id,'first_name' =>  $child_fname, 
             'age_range' => $child_age
+            ]
+        );    
+            
+        $page = GiftPage::updateOrCreate(
+            ['user_id' => $id, 'child_info_id' => $child->id],
+            ['user_id' => $id,'page_hostname' =>  $host_fname.' '.$host_lname,
+            'child_info_id' => $child->id
+            ]
+        );    
+        
+        ChildInfo::updateOrCreate(
+            ['user_id' => $id,'first_name' =>  $child_fname],
+            ['user_id' => $id,'first_name' =>  $child_fname, 
+            'age_range' => $child_age, 'gift_page_id' => $page->id 
             ]
         );
         
@@ -147,21 +161,22 @@ class AccountController extends Controller
         
         $id = Auth::id();
         
-            
-        
             $not_decided = $request->not_decided;
             $event_publish_date = $request->party_time;
             $zipcode = $request->zip_code;
+            $child = $request->child;
         
   
-        $event = Event::updateOrCreate(
-            ['user_id' => $id],
-            ['event_publish_date' =>  $event_publish_date, 
-            'zipcode' => $zipcode,
-            'not_decided' => $not_decided
-            ]
+        $child = ChildInfo::updateOrCreate(
+            ['user_id' => $id, 'first_name' =>  $child],
+            ['child_zipcode' => $zipcode]
         );
         
+        GiftPage::updateOrCreate(
+            ['user_id' => $id, 'child_info_id' => $child->id],
+            ['page_date' => $event_publish_date
+            ]
+        );
         
         return response()->json(['update' => 'Success']);
         
@@ -172,10 +187,13 @@ class AccountController extends Controller
         $id = Auth::id();
         
             $gift_link = $request->gift_link;
+            $child = $request->child;
+            
+        $child = ChildInfo::where('first_name', $child)->first();   
 
-        $event = Event::updateOrCreate(
-            ['user_id' => $id],
-            ['publish_url' =>  $gift_link
+        GiftPage::updateOrCreate(
+            ['user_id' => $id, 'child_info_id' => $child->id],
+            ['slug' =>  $gift_link
             ]
         );
         

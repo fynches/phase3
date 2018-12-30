@@ -15,19 +15,17 @@
         	</div>
         	<div class="col-sm-6 col-md-6">
         		<p>Sign up for early access to Fynches and keep a lookout for updates and amazing giveaways.</p>
-        		 {!! Form::open(array('url'=>'/betaSignupUser','class'=>'form-horizontal','method'=>'POST','id'=>'signupForm')) !!}
+        		<form id="signupBetaForm" class="form-horizontal" method="POST" action="/betaSignupUser" onsubmit="event.preventDefault(); return false;">
              {{ csrf_field() }}
-
         			<div class="form-group">
-        				{!! Form::label('firstName', 'First Name'); !!}
-        	        {!! Form::text('firstName',null,array('required','class'=>'form-control','id'=>'firstName','name'=>'firstName')) !!}
+        			    <label for="firstName" class="required">First Name</label>
+        				<input required type="text" id="firstName" name="firstName" class="form-control required">
 					</div>
 					<div class="form-group">
-					  {!! Form::label('email', 'Email'); !!}
-        	        {!! Form::email('email',null,array('class'=>'form-control','id'=>'email','required','name'=>'email')) !!}
+					    <label for="email" class="required">email</label>
+        				<input required type="email" id="signup-email" name="email" class="form-control required">
 					</div>
 					<button type="submit" class="btn common blue">JOIN OUR BETA LAUNCH</button>
-        		 {!! Form::close() !!}
         	</div>
         	<div class="terms-conditions">
         	    <div>By creating your Fuynches account you agree to our <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a></div>
@@ -40,8 +38,8 @@
     </div>
   </div>
 </div>
-<script type="text/javascript" src="{{ asset('front/js/jquery.min.js')}}"></script>
-{{Html::script("/front/common/beta-signup/betasignup.js")}}
+<script type="text/javascript" src="{{ asset('public/front/js/jquery.min.js')}}"></script>
+<script type="text/javascript" src="{{ asset('public/front/common/beta-signup/betasignup.js')}}"></script>
 <script type="text/javascript">
    
 

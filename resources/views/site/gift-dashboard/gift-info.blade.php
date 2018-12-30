@@ -23,14 +23,13 @@
 </head>
 
 <body>
-
+@yield('header')
 
 
 @yield('content')
-{{Html::script("public//front/js/jquery.min.js")}}
+@yield('footer')
 <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>	
-
-{{Html::script("public//front/js/bootstrap.min.js")}}}
+<script src="{{ asset('public/js/dashboard.js') }}"></script>
 
 @yield('jsscript')
 </body>

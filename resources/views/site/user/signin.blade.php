@@ -107,7 +107,7 @@
 @endsection
 
 @section('jsscript')
-{{Html::script("/front/common/beta-signup/betasignup.js")}}
+<script type="text/javascript" src="{{asset('public/front/common/beta-signup/betasignup.js')}}">
 <script type="text/javascript">	
 	$( document ).ready(function() {
 		AOS.init({

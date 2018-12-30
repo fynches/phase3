@@ -165,6 +165,10 @@ return [
         /*
          * Package Service Providers...
          */
+        
+        Laravel\Socialite\SocialiteServiceProvider::class,
+        Watson\Autologin\AutologinServiceProvider::class,
+        
 
         /*
          * Application Service Providers...
@@ -202,6 +206,7 @@ return [
         'Crypt' => Illuminate\Support\Facades\Crypt::class,
         'DB' => Illuminate\Support\Facades\DB::class,
         'Eloquent' => Illuminate\Database\Eloquent\Model::class,
+        'Entrust'   => Zizaco\Entrust\EntrustFacade::class,
         'Event' => Illuminate\Support\Facades\Event::class,
         'File' => Illuminate\Support\Facades\File::class,
         'Gate' => Illuminate\Support\Facades\Gate::class,
@@ -223,6 +228,8 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+        'Autologin' => Watson\Autologin\Facades\Autologin::class,
 
     ],
 

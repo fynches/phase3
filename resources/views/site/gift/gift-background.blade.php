@@ -5,36 +5,14 @@
           <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="$('#gift_background').hide();">
           <span aria-hidden="true">&times;</span>
         </button>
-         <h5 class="text-center">CHOOSE FROM OUR LIBRARY OR UPLOAD YOUR OWN BACKGROUND IMAGE</h5>
+         <h5 class="text-center">CHOOSE BACKGROUND IMAGE FROM OUR LIBRARY</h5>
         
          <div class="row" id="background">
+             @foreach($background_images as $images)
              <div class="col-md-4">
-                 <img src="http://fynches.codeandsilver.com/public/front/img/party.jpeg" style="width:100%;height: 150px;">
+                 <img class="background-image" src="{{$images->image_url}}" style="width:100%;height: 150px;" data-image-id="{{$images->id}}">
              </div>
-             <div class="col-md-4">
-                 <img src="http://fynches.codeandsilver.com/public/front/img/party_2.jpg" style="width:100%;height: 150px;">
-             </div>
-             <div class="col-md-4">
-                 <img src="http://fynches.codeandsilver.com/public/front/img/party.jpeg" style="width:100%;height: 150px;">
-             </div>
-             <div class="col-md-4">
-                 <img src="http://fynches.codeandsilver.com/public/front/img/party.jpeg" style="width:100%;height: 150px;">
-             </div>
-             <div class="col-md-4">
-                 <img src="http://fynches.codeandsilver.com/public/front/img/party.jpeg" style="width:100%;height: 150px;">
-             </div>
-             <div class="col-md-4">
-                 <img src="http://fynches.codeandsilver.com/public/front/img/party.jpeg" style="width:100%;height: 150px;">
-             </div>
-             <div class="col-md-4">
-                 <img src="http://fynches.codeandsilver.com/public/front/img/party.jpeg" style="width:100%;height: 150px;">
-             </div>
-             <div class="col-md-4">
-                 <img src="http://fynches.codeandsilver.com/public/front/img/party.jpeg" style="width:100%;height: 150px;">
-             </div>
-             <div class="col-md-4">
-                 <img src="http://fynches.codeandsilver.com/public/front/img/party.jpeg" style="width:100%;height: 150px;">
-             </div>
+             @endforeach
              
          </div>
          

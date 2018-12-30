@@ -26,10 +26,11 @@
 
 
 
-{{Html::script("public/front/js/jquery.min.js")}}
-<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>	
 
-{{Html::script("public/js/info.js")}}
+<script src="{{ asset('public/front/js/jquery.min.js')}}"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>	
+<script src="{{ asset('public/js/info.js')}}"></script>
+
 
 
 @yield('jss')

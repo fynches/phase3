@@ -36,7 +36,7 @@
 					<div class="lft-cnt" >
 						<h2 class="">The First Gift Registry for Kids.</h2>
 						<p>The easiest way for you to let friends and family gift activities to your child on their birthday.</p>
-						<button class="btn common pink-btn">CREATE YOUR FREE GIFT PAGE</button>
+						<button class="btn common pink-btn" data-toggle="modal" data-target="#largeModalS">CREATE YOUR FREE GIFT PAGE</button>
 					</div>
 				</div>
 			</div>
@@ -83,7 +83,7 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-md-12 text-center"><button class="btn common pink-btn">CREATE YOUR GIFT PAGE</button></div>
+			<div class="col-md-12 text-center"><button class="btn common pink-btn" data-toggle="modal" data-target="#largeModalS">CREATE YOUR GIFT PAGE</button></div>
 		</div>
 	</div>
 </section>
@@ -95,7 +95,7 @@
 			<div class="col-md-12 text-center">
 				<h2 class="title">Gifts and Experiences Your Child Will Love.</h2>
 				<p>From swimming lessons to adventure parks we have everything you need to make your child’s next gift an unforgettable experience.</p>
-				<button class="btn common btn-border">CREATE YOUR GIFT PAGE</button>
+				<button class="btn common btn-border" data-toggle="modal" data-target="#largeModalS">CREATE YOUR GIFT PAGE</button>
 			</div>
 		</div>
 	</div>
@@ -114,7 +114,7 @@
 					<li>Avoid duplicate gifts, over-gifting, and constantly answering the “what should we get?” question.</li>
 					<li>Help friends and family gift experiences that will help your child grow and create magical memories.</li>
 				</ul>
-				<button class="btn common pink-btn">CREATE YOUR GIFT PAGE</button>
+				<button class="btn common pink-btn" data-toggle="modal" data-target="#largeModalS">CREATE YOUR GIFT PAGE</button>
 			</div>
 		</div>
 	</div>
@@ -159,12 +159,12 @@
 <!-- SignUp Model -->
 @include('site.user.signin-modal')
 
-
+@include('site.user.password-modal')
 
 
 
 @section('jsscript')
-{{Html::script("/public/front/common/signup/signup.js")}}
+<script type="text/javascript" src="{{ asset('public/front/common/signup/signup.js')}}"></script>
 <script type="text/javascript">	
 	$( document ).ready(function() {
 		AOS.init({
@@ -212,4 +212,5 @@
   </div>
 </div>
 <!-- End -->
+@include('site.gift.contact-us')
 @endsection

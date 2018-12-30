@@ -12,13 +12,13 @@
                 <div class="form-row">
                     <div class="form-group col-md-6">
                       <label for="fname" class="required">FIRST NAME</label>
-                      <input required type="text" maxlength="20" class="form-control" id="host_fname" value="@if($user->event) {{$user->event->first_name}}@endif">
+                      <input required type="text" maxlength="20" class="form-control" id="host_fname" value="">
                     </div>
                  </div>
                  <div class="form-row">
                     <div class="form-group col-md-6">
                       <label for="lname" class="required">LAST NAME</label><a  href="#" data-toggle="tooltip" title="Insert Tooltip Here!" style="color:black;"> &nbsp&nbsp<i class="fas fa-info-circle"></i></a>
-                      <input required type="text" maxlength="30" class="form-control" id="host_lname" value="@if($user->event){{$user->event->last_name}}@endif">
+                      <input required type="text" maxlength="30" class="form-control" id="host_lname" value="">
                     </div>
                   </div>
             </div>
@@ -27,20 +27,20 @@
                 <div class="row">
                 <form class="form-inline">
                     <div class="form-row">
-                      <div class="form-group col-md-4">
+                      <div id="name" class="form-group col-md-4" data-child="">
                         <label for="cfname" class="required">FIRST NAME</label>
-                        <input required type="text" maxlength="20" class="form-control" id="child_fname" value="@if($user->child){{$user->child->first_name}}@endif">
+                        <input required type="text" maxlength="20" class="form-control" id="child_fname" value="" >
                       </div>
                       <div class="form-group col-md-5">
                         <label for="age" class="required">AGE</label>
-                        <input required type="text" maxlength="3" class="form-control" id="child_age" value="@if($user->child){{$user->child->age_range}}@endif" pattern="\d{1,3}">
+                        <input required type="text" maxlength="3" class="form-control" id="child_age" value="" pattern="\d{1,3}">
                       </div>
                       </div>
                     </form>
                 </div>
                 <div class="row" id="drag" >
                     <p>ADD A PHOTO OF GIFT RECIPIENT <a  href="#" data-toggle="tooltip" title="Insert Tooltip Here!" style="color:black;">&nbsp&nbsp<i class="fas fa-info-circle"></i></a></p>
-                        <form action="upload.php" method="POST">
+                        <form id="photo-form" action="upload.php" method="POST">
                       <input id="upphoto" type="file" onchange="readURL(this);">
                       
                       

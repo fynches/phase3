@@ -4,29 +4,23 @@
     <header>
         <div class="container">
             <div class="row">
-                <div class="col-md-8">
+                <div class="fheader col-md-8">
                     <h1 id="hd">FYNCHES</h1>
                 </div>
                 <div class="col-md-4">
-                    <div id="div_top_hypers">
-    <ul id="ul_top_hypers">
-        <li><a href="" class="a_top_hypers"> HELP</a></li>
-        <li class="dropdown">
-   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">MY ACCOUNT <span class="caret"></span></a>
-   
-    <ul class="dropdown-menu" role="menu">
-        
-       <li><a href="/account">ACCOUNT SETTINGS</a></li>
-       <li><a href="/gift-dashboard">DASHBOARD</a></li>
-       <li><a href="{{ url('/logout') }}">LOGOUT</a></li>
-       
-    </ul>
-  
-</li>
-
-
-</div>
-    </ul>
+                    <div class="fmenu" id="div_top_hypers">
+                         <ul id="ul_top_hypers">
+                            <li><a href="" class="a_top_hypers"> HELP</a></li>
+                                <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">MY ACCOUNT <span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="/account">ACCOUNT SETTINGS</a></li>
+                                    <li><a href="/gift-dashboard">DASHBOARD</a></li>
+                                    <li><a href="{{ url('/logout') }}">LOGOUT</a></li>
+                                </ul>
+                                </li>
+                           </div>
+                         </ul>
 </div>
                 </div>
             </div>
@@ -34,6 +28,39 @@
     </header>
     
 @stop 
+
+@if (\Request::is('password-reset')) 
+@section('account_info')
+<div id="acc" class="container account-body">
+        <div class="row">
+            <div class="col-sm-3" >
+            </div>    
+            <div class="col-sm-9" >    
+              <form id="accPass" onsubmit="event.preventDefault();">
+              <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="npass">New Password</label>
+                <input type="password" class="form-control" id="npass" required>
+                <input type="hidden" class="form-control" id="no-cn" value="1">
+              </div>
+              </div>
+              <div id="pass-row" class="form-row">
+              <div class="form-group col-md-6">
+                <label for="cnpass">Confirm New Password</label>
+                <input type="password" class="form-control" id="cnpass" required>
+              </div>
+              </div>
+              <div class="form-row">
+                        <div class="col-md-6" style="padding:0px">
+                            <input id="accPass-submit" type="submit" class="purple-submit pointer" value="SUBMIT PASSWORD">
+                        </div>
+                    </div>  
+            </form>
+         </div>
+     </div>
+   </div>  
+@stop  
+@else 
 
 
 @section('account_info')
@@ -83,7 +110,7 @@
     
 @stop 
     
- 
+@endif 
 
 @section('footer')
 <footer class="footer">
@@ -102,6 +129,7 @@
 						<li><a href="javascript:void(0)">FIND A GIFT PAGE</a></li>
 					</ul>
 				</div>
+				<!--col-sm-12 col-md-6 col-lg-6 text-center-->
 				<div class="col-sm-12 col-md-3 col-lg-3 text-right home">
 					<ul class="social">
 						<li><a href="javascript:void(0)"><i class="fab fa-twitter"></i></a></li>

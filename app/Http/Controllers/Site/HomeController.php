@@ -9,7 +9,6 @@ use App\Offer;
 use DB;
 use Session;
 use Hash;
-
 use Route;
 use App\ActivityLog;
 use Auth;
@@ -23,6 +22,7 @@ use Yajra\Datatables\Datatables;
 use App\Testimonial;
 use App\StaticBlock;
 use App\Beta_Signup;
+use Autologin;
 use Response;
 use Mail;
 use App\EmailTemplates;
@@ -32,7 +32,8 @@ class HomeController extends Controller
     
 
     public function index()
-    {        
+    {   
+        
         return view('site.index');
     }
 
@@ -83,6 +84,41 @@ class HomeController extends Controller
     }
     
     /***********************************************************************************************/
+    
+    public function passwordReset(Request $request){
+        
+       // User class implements UserInterface
+       
+        $email = $request->email;
+        
+        $user = User::where('email', '=', $email)->first();
+        
+        // http://example.com/autologin/Mx7B1fsUin
+        $link = Autologin::to($user, '/password-reset');
+        
+        $data = array('email' => $email, 'link' => $link, 'user' => $user);
+        
+        Mail::send( 'emails.reset', $data, function($message) use ($data)
+        	{     
+        	    
+        	    
+        	    $subject = 'Fynches Password Reset Link';
+        	    
+        	    $message->sender('help@ehubsolutions.com', 'eHub Solutions');
+        	    $message->from('info@fynches.com');
+        	    $message->subject($subject);
+        		$message->to($data['email']);
+        		
+        	});
+        	
+        if(count(Mail::failures()) > 0){
+            return response()->json(['success' => 0]);
+        } else {
+            return response()->json(['success' => 1]);
+        }
+        
+    }
+    
     public function signup(Request $request) {
         
         $email = $request->email;

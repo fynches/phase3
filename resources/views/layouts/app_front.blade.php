@@ -10,6 +10,7 @@
 	
 	@yield('head-section')	
 	<link rel="stylesheet" href="{{asset('public/front/css/style.css')}}">
+	<link rel="stylesheet" href="{{asset('public/front/css/gift.css')}}">
 	<link rel="stylesheet" href="{{asset('public/front/css/bootstrap.css')}}">
 	<link rel="stylesheet" href="{{asset('public/front/css/aos.css')}}">
 	<link rel="stylesheet" href="{{asset('public/front/css/all.css')}}">

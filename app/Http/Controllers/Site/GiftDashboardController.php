@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\User;
 use App\Gift;
+use App\GiftPage;
 use App\Offer;
 use App\Company;
 use App\Templates;
@@ -23,7 +24,7 @@ use Illuminate\Support\Facades\URL;
 use Laravel\Socialite\Facades\Socialite;
 use Yajra\Datatables\Datatables;
 use App\Site;
-use App\Event;
+use App\GiftPurchase;
 use App\Experience;
 use App\FundingReport;
 use App\Testimonial;
@@ -48,14 +49,26 @@ class GiftDashboardController extends Controller
      */
     public function index()
     {
-	    $gifts = Gift::all()->toArray();
-    	return view('site.gift-dashboard.index', compact('gifts'));
+        if (Auth::check()) {
+            
+        $user = Auth::user();
+        
+	    $giftPages = GiftPage::where('user_id',$user->id)->get();
+	    
+    	return view('site.gift-dashboard.index', compact('giftPages'));
+        }
 	} 
 	
 	public function gifted()
 	{
-	    $gifts = Gift::all()->toArray();
-		return view('site.gift-dashboard.gifted', compact('gifts'));
+	    if (Auth::check()) {
+            
+        $user = Auth::user();
+        
+	    $purchases =  GiftPurchase::where('status', 2)->get();
+	    
+    	return view('site.gift-dashboard.gifted', compact('purchases'));
+        }
 	}   
     
 }

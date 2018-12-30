@@ -6,7 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\UserMeta;
-
+use App\ChildInfo;
+use App\GiftPage;
 
 class ParentChildController extends Controller
 {
@@ -15,6 +16,7 @@ class ParentChildController extends Controller
         if (Auth::check()) {
             
             $user = Auth::user();
+            
    
             return view('site.info.info', compact('user'));
             
@@ -43,5 +45,13 @@ class ParentChildController extends Controller
         $event->event_end_date = $date->format('Y-m-d');
         $event->zipcode = $zipcode;
         $event->publish_url = $link;
+        
+        $background = ChildInfo::updateOrCreate(
+            ['user_id' => $user->id, 'id' => $page_id],
+            ['background_id' => $image_id]
+        );
+        
     }
+    
+    
 }

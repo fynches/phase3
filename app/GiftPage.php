@@ -1,0 +1,25 @@
+<?php
+
+namespace App;
+
+use DB;
+use Illuminate\Database\Eloquent\Model;
+
+class GiftPage extends Model {
+    
+    protected $table = 'gift_page';
+    protected $fillable = ['user_id','child_info_id', 'page_title', 'page_desc','page_date','page_hostname', 'background_id', 'id', 'rec_zip', 'favorites', 'gifts', 'slug'];
+    
+    public function child()
+    {
+        return $this->hasOne('App\ChildInfo', 'id', 'child_info_id' );
+    }
+    
+    public function background_image()
+    {
+        return $this->hasOne('App\BackgroundImages', 'id', 'background_id' );
+    }
+    
+} 
+
+?>

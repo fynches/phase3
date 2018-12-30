@@ -18,7 +18,7 @@
                 <p id="gp">https://www.fynches.com/gift-page/</p>
                 </div>
                 <div class="col-md-6 col-xs-6 text-left" >
-                <input required id="your-link" type="text" placeholder="" style="width: 100%;border-radius: 0 5px 5px 0;" value="@if($user->event){{$user->event->publish_url}}@endif" pattern="[A-Za-z0-9]*">
+                <input required id="your-link" type="text" placeholder="" style="width: 100%;border-radius: 0 5px 5px 0;" value="" pattern="[A-Za-z0-9]*">
                 <p>Please use only letters or numbers only</p>
                 </div>
             </div>  

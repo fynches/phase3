@@ -10,17 +10,17 @@
          
          <div class="row" id="add_form">
              <div class="col-md-6">
-                 <img src="http://fynches.codeandsilver.com/public/front/img/upload.png" style="width:100%">
+                 <img id="gift_image" src="https://fynches.codeandsilver.com/public/front/img/upload.png" style="width:100%">
              </div>
              <div class="col-md-6">
                  <label>Enter URL of Experience</label>
-                 <input type="text" class="form-control" placeholder="https://www.example-url.com/">
+                 <input type="text" class="form-control" id="gift_url" placeholder="https://www.example-url.com/">
                  
                  <label>Experience Title</label>
-                 <input type="text" class="form-control">
+                 <input type="text" class="form-control" id="gift_title">
                  
                  <label>Experience Description</label>
-                 <textarea name="message" class="form-control" id="text_area"></textarea>
+                 <textarea name="message" class="form-control" id="gift_desc" style="resize:none;"></textarea>
                  
                  <div class="row" id="gift_amount">
                      <div class="col-md-6">
@@ -28,7 +28,7 @@
                      </div>
                      <div class="col-md-6">
                          <p>GIFT AMOUNT <i class="fas fa-info-circle"></i></p>
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" id="gift_price">
                      </div>
                  </div>
                  

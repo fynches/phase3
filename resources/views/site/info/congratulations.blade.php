@@ -1,4 +1,4 @@
-<form id="pageLink" action="/gift">
+<form id="congrats" method="GET" action="">
     <div class="container">
         <div class="row form-section">
             <div class="col-md-12">
