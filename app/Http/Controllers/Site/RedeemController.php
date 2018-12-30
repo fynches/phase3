@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\UserMeta;
+use App\Gift;
 use App\GiftPage;
 use App\GiftPurchase;
 use DateTime;

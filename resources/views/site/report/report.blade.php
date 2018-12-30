@@ -36,7 +36,7 @@
     <div class="container-fluid cont">
         <div class="row">
             <div class="col-md-12">
-                <h5><a href="#">BACK TO DASHBOARD</a></h5>
+                <h5><a href="/gift-dashboard">BACK TO DASHBOARD</a></h5>
             </div>
         </div>
     </div>
@@ -50,57 +50,65 @@
             
             <div class="container gift_marg">
                 <div class="col-md-3  text-center">
-                    <h1>$115</h1>
-                    <p>OF $300<br>REQUESTED</p>
+                    <h1>${{$purchases}}</h1>
+                    <p>OF ${{$requested}}<br>REQUESTED</p>
                 </div>
                 <div class="col-md-3  text-center">
-                    <h1>15</h1>
+                    <h1>{{$count}}</h1>
                     <p>TOTAL NUMBER<br>OF GIFTS</p>
                 </div>
                 <div class="col-md-3  text-center">
-                    <h1>$12.46</h1>
+                    <h1>${{$avaerage}}</h1>
                     <p>AVERAGE AMOUNT <br>PER GIFT</p>
                 </div>
                 <div class="col-md-3  text-center">
-                    <h1>$100</h1>
-                    <p>CURRENT BALANCE<br><a>VIEW</a></p>
+                    <h1>${{$bank}}</h1>
+                    <p>CURRENT BALANCE<br><a href="/redeem-gifts">VIEW</a></p>
                 </div>
             </div>
             
+            @foreach($gift_purchases as $purchase)
+            <div class="purchases">
             <div class="row" id="report_info">
                 <div class="col-md-3 text-center">
-                    <h5>Tom Someone</h5>
+                    <h5>{{$purchase->name}}</h5>
                 </div>
                 <div class="col-md-3  text-center">
-                    <h5>someone@something.com</h5>
+                    <h5>{{$purchase->email}}</h5>
                 </div>
                 <div class="col-md-3  text-center">
-                     <h5>November 28, 2018</h5>
+                    @php 
+                        $stime = strtotime($purchase->created_at);
+                        $date = date('F jS Y', $stime);
+                    @endphp
+                     <h5>{{$date}}</h5>
                 </div>
                 <div class="col-md-3  text-center">
-                    <div class="col-md-6"><h5>$50.00 </h5></div> <div class="arrow-up"></div>
+                    <div class="col-md-6"><h5>${{$purchase->amount}} </h5></div> <div class="arrow-up"></div>
                 </div>
             </div>
             
             <div class="row" id="report_tab">
                 <div class="col-md-1  text-center">
-                   <img src="http://fynches.codeandsilver.com/public/front/img/prof_pic.png" style="width: 50%;">
+                   <img src="{{$purchase->child->recipient_image}}" style="width: 50%;">
                 </div>
                 <div class="col-md-2  text-center">
-                    <h5>Product Gift Title</h5>
+                    <h5>{{$purchase->gift->title}}</h5>
                 </div>
                 <div class="col-md-6">
-                     <div class="col-md-1">
-                     <h5>Message</h5>
+                     <div class="col-md-2">
+                     <h5>Message:</h5>
                      </div>
-                     <div class="col-md-11">
-                         <p>Happy Birthday Charlie! We can't wait to <br>celebrate your big day! We hope you love the <br>climbing lessons we gifted. </p>
+                     <div class="col-md-10" style="padding-left: 0px;">
+                         <p style="margin-top: 10px;">{{$purchase->message}}</p>
                      </div>     
                 </div>
                 <div class="col-md-3  text-center">
                     <button class="btn btn-border yellow-submit"> SEND THANK YOU</button>
                 </div>
             </div>
+            </div>
+            @endforeach
             
             <div class="row" id="report_trans">
                 <div class="col-md-3  text-center">

@@ -116,7 +116,7 @@ Route::get('/search', 'Site\SearchController@index')->name('search');
 
 //**************Start Report_Page***************//
 
-Route::get('/gift-report', 'Site\ReportController@index')->name('report');
+Route::get('/gift-report/{slug}', 'Site\ReportController@index')->name('report');
 
 
 //**************End Report_Page***************//

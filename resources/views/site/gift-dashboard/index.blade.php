@@ -78,7 +78,7 @@
                 
                 <div class="col-md-3" style="margin-left:auto">
                     <a href="/redeem-gifts"><i style="font-size:24px;margin-left:20px;color: black;" class="fa fa-bank"></i></a>
-                    <a href="/gift-page/{{$page->slug}}"><i style="font-size:24px;margin-left:20px;color: black;" class="far fa-file-alt"></i></a>
+                    <a href="/gift-report/{{$page->slug}}"><i style="font-size:24px;margin-left:20px;color: black;" class="far fa-file-alt"></i></a>
                     <a href="/gift/{{$page->slug}}"><i style="font-size:24px;margin-left:20px;color: black;" class="far fa-edit"></i></a>
                     <a id="delete-gift" href=""><i style="font-size:24px;margin-left:20px;color: black;" class="far fa-trash-alt"></i></a>
                 </div>

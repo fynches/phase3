@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use App\UserMeta;
 use App\GiftPurchase;
 use Stripe;
+use App\GiftPage;
 
 class CheckoutController extends Controller
 {
@@ -33,11 +34,15 @@ class CheckoutController extends Controller
         
         $gift_purchase = GiftPurchase::where('session_id', $session_id)->where('status', 1)->get();
         
+        foreach($gift_purchase as $purchase) {
+            $gift_page = GiftPage::where('id', $purchase->gift_page_id)->first();
+        }
+        
         $session_total = $gift_purchase->sum('amount');
         
         $count = count($gift_purchase);
    
-        return view('site.checkout.checkout', compact('gift_purchase', 'session_total', 'count'));
+        return view('site.checkout.checkout', compact('gift_purchase', 'session_total', 'count', 'gift_page'));
         
         
       }

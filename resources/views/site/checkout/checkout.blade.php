@@ -31,7 +31,7 @@
                 <p>Don't have an account? <a href="#" data-toggle="modal" data-target="#largeModalS"> Sign Up </a></p>
             </div>
             <div class="col-md-3">
-                <a href="/gift-live"><button class="btn common btn-border" id="btn_blk">CONTINUE SHOPPING</button></a>
+                <a href="/gift-page/{{$gift_page->slug}}"><button class="btn common btn-border" id="btn_blk">CONTINUE SHOPPING</button></a>
             </div>
         </div>
     </div>
