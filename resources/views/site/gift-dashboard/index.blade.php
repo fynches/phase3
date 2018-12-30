@@ -43,7 +43,7 @@
         <div class="col-md-9 dashboard-items">
             <div class="row">
                 <h3>Gift Pages</h3>
-                <button class="create-gift" style="margin-left:auto"><a href="/gifted" style="color:#fff;">CREATE GIFT PAGE</a></button>
+                <a href="/parent-child-info" style="color:#fff;margin-left:auto" class="pointer"><button class="create-gift" style="margin-left:auto">CREATE GIFT PAGE</button></a>
             </div>
             <div class="row" style="margin-top:30px;">
                 <h5 style="height:50px; overflow: hidden;"><strong>ACTIVE GIFT PAGES</strong>    ---------------------------------------------------------------------------------------------------------</h3>

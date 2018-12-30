@@ -54,7 +54,7 @@
                     <div class="row" style="margin-top:20px;">
                     <div class="col-md-2 media">
                         <span class="media-left">
-                            <img src="https://fynches.codeandsilver.com/public/front/img/prof_pic.png" width="100" alt="Image Here">
+                            <img src="{{$gift->child->recipient_image}}" width="100" alt="Image Here">
                         </span>
                     </div>    
                     <div class="col-md-10 media-body">
@@ -67,11 +67,15 @@
                     <div class="col-md-3">
                         <p class="gifted_right">Gifted To: {{$gift->child->first_name}}</p> 
                     </div>
-                    <div class="col-md-5">
+                    <div class="col-md-4">
                         <p>Gifted ${{$gift->amount}} of ${{$gift->gift->price}} Requested</p>
                     </div>
-                    <div class="col-md-2">
-                        <p class="gifted_too_left">Gifted On: @isset($gift->amountf){{date_create_from_format('Y-m-d', $gift->amount)->format('m-d-Y')}}@endisset</p>
+                    <div class="col-md-3">
+                        @php 
+                        $stime = strtotime($gift->created_at);
+                        $date = date('m/d/Y', $stime);
+                        @endphp
+                        <p class="gifted_too_left">Gifted On: @isset($date){{$date}}@endisset</p>
                     </div>
                 </div>
                 </div>
@@ -82,4 +86,46 @@
 </div>
 @endsection
  
-
+@section('footer')
+<footer class="footer" style="margin-top:10%;">
+	<div class="container">
+		<div class="footer-top">
+			<div class="row">
+				<div id="footer_header" class="fheader col-sm-12 col-md-3 col-lg-3">
+					<a href="javascript:void(0)"><img src="http://fynches.codeandsilver.com/public/front/img/f-logo.png" alt="logo" title=""></a>
+				</div>
+				<div class="col-sm-12 col-md-5 col-lg-6 text-center">
+					<ul class="f-menu">
+						<li><a href="javascript:void(0)">ABOUT</a></li>
+						<li><a href="javascript:void(0)">BLOG</a></li>
+						<li><a href="javascript:void(0)">CONTACT US</a></li>
+						<li><a href="javascript:void(0)">FAQS</a></li>
+						<li><a href="javascript:void(0)">FIND A GIFT PAGE</a></li>
+					</ul>
+				</div>
+				<div  id="icon" class="fheader col-sm-12 col-md-4 col-lg-3 text-right home">
+					<ul class="social">
+						<li><a href="javascript:void(0)"><i class="fab fa-twitter"></i></a></li>
+						<li><a href="javascript:void(0)"><i class="fab fa-facebook-f"></i></a></li>
+						<li><a href="javascript:void(0)"><i class="fab fa-instagram"></i></a></li>
+						<li><a href="javascript:void(0)"><i class="fab fa-pinterest-p"></i></a></li>
+					</ul> 
+				</div>
+			</div>
+		</div>
+		<div class="footer-btm home-btm">
+			<div class="row">
+				<div id="rights" class="fheader col-md-7 col-lg-7">
+					<p>&copy; 2019 Fynches. All rights reserved</p>
+				</div>
+				<div class="fheader col-md-5 col-lg-5 text-right">
+					<ul  id="terms" >
+						<li><a href="javascript:void(0)">Privacy Policy</a></li>
+						<li><a href="javascript:void(0)">Terms and Conditions</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+@stop
