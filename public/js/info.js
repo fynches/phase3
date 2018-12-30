@@ -530,7 +530,6 @@ jQuery(document).ready(function( $ ) {
     });
     
     $( "#dateLocation" ).submit(function( event ) {
-
         $.ajaxSetup({
             headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}
         });
@@ -581,6 +580,7 @@ jQuery(document).ready(function( $ ) {
             var link = $('#your-link').val();
             var child = $('#child_fname').val();
             var slug = $('#your-link').val();
+            var pic_src = $('#picture').attr('src');
              
             $('#congrats').attr('action', 'gift/'+slug); 
             
@@ -591,6 +591,7 @@ jQuery(document).ready(function( $ ) {
                 url:'/account/gift-link',
                 data:{
                     gift_link: link,
+                    pic_src:pic_src,
                     child: child
                 },
                 success:function(data){

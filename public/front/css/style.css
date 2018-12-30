@@ -313,7 +313,7 @@ section.banner-sec.beta-banner-sec .gift-page{padding: 30px 0;}
 .common-model form {padding: 24px 0 0;}
 .common-model form label{font-size: 12px; line-height: 12px; color: #34344A; margin-bottom: 0; font-family: 'Futura-Medium';font-weight:bold;}
 .common-model form .form-group{margin-bottom: 24px;}
-form input[type="text"], form input[type="email"], form input[type="password"], form input[type="tel"],  form textarea{border: 1px solid #34344A; height: calc(2.25rem + 4px); color: #34344A; font-family: 'Avenir-Book'; font-weight: 400;}
+form input[type="text"], form input[type="email"], form input[type="password"], form input[type="tel"],  form textarea{border: 1px solid #34344A; height: calc(2.25rem + 4px); color: #34344A; font-family: 'Avenir-Book'; font-weight: 400;padding:20px;}
 form .form-control:focus{box-shadow: 0 0 0 0.1rem rgba(52, 52, 74,0.2); border-color: #34344A;}
 .common-model form button{margin-top: 10px; width: 100%; font-size: 11px; line-height: 14px; font-family: 'Futura-Medium'; min-height: 40px; padding: 5px 15px; letter-spacing: 1px;}
 

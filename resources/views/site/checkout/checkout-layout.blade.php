@@ -17,6 +17,7 @@
 	<link href="{{ asset('public/asset/css/info.css') }}" rel="stylesheet">
 	<link href="{{ asset('public/asset/css/gift.css') }}" rel="stylesheet">
 	<link href="{{ asset('public/front/css/style.css') }}" rel="stylesheet">
+	<link rel="stylesheet" href="{{asset('public/front/css/bootstrap.css')}}">
 
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
    <link href="https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css" rel="stylesheet">
@@ -25,6 +26,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="{{asset('public/js/check-out.js')}}"></script> 
+
    
    <style type="text/css">
     @font-face {
@@ -53,6 +55,6 @@
 
 
 @yield('jss')
-<script src="{{ asset('public/js/logIn.js') }}"></script>
+
 </body>
 </html>

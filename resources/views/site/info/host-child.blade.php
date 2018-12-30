@@ -41,10 +41,8 @@
                 <div class="row" id="drag" >
                     <p>ADD A PHOTO OF GIFT RECIPIENT <a  href="#" data-toggle="tooltip" title="Insert Tooltip Here!" style="color:black;">&nbsp&nbsp<i class="fas fa-info-circle"></i></a></p>
                         <form id="photo-form" action="upload.php" method="POST">
-                      <input id="upphoto" type="file" onchange="readURL(this);">
-                      
-                      
-                      <p>Drag and Drop or <a href="#">Browse</a> your files</p>
+                      <input id="upload-photo" type="file" data-toggle="modal" data-target="#gift_crop" onclick="event.preventDefault();">
+                      <p><a href="#">Upload a Profile Image</a></p>
                       
                     </form>
                     <div id="pictures"></div>
@@ -59,23 +57,4 @@
         
     </div>
 </form>
-
-<script>
-    function readURL(input) {
-        if (input.files && input.files[0]) {
-            input.files[0].value = null;
-            $( '#picture' ).remove();
-                var image = '<img id="picture" src="#" style="padding:20px"/>';
-                $( '#pictures' ).append(image);
-                var reader = new FileReader();
-                reader.onload = function (e) {
-                    $('#picture')
-                        .attr('src', e.target.result)
-                        .width(200)
-                        .height(200);
-                };
-    
-                reader.readAsDataURL(input.files[0]);
-            }
-    }
-</script>
+@include('site.gift.gift_crop')

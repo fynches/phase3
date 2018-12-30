@@ -188,16 +188,59 @@ class AccountController extends Controller
         
             $gift_link = $request->gift_link;
             $child = $request->child;
-            
-        $child = ChildInfo::where('first_name', $child)->first();   
-
+        
+        $child = ChildInfo::where('user_id',$id)->where('first_name', $child)->first();
+        
         GiftPage::updateOrCreate(
             ['user_id' => $id, 'child_info_id' => $child->id],
-            ['slug' =>  $gift_link
-            ]
+            ['slug' =>  $gift_link]
+        );
+        
+        $input = $request->pic_src;
+        $output = 'public/images/profile_images/' . $gift_link . '.png';
+        file_put_contents($output, file_get_contents($input));
+        
+        ChildInfo::updateOrCreate(
+            ['id' => $child->id, 'user_id' => $id],
+            ['recipient_image' => 'http://fynches.codeandsilver.com/public/images/profile_images/' . $gift_link . '.png']
         );
         
         return response()->json(['update' => 'Success']);
+        
+    }
+    
+    public function test() {
+        $id = Auth::id();
+        
+            $gift_link = 'Jorge';
+            $child = 'Jorge';
+        
+        return response()->json(['id' => $id]);
+        
+        $child = ChildInfo::where('user_id',$id)->where('first_name', $child)->first();
+        
+        ?>
+        <pre>
+        <?php
+        print_r($child);
+        return;
+        ?>
+        </pre>
+        <?php
+        
+        GiftPage::updateOrCreate(
+            ['user_id' => $id, 'child_info_id' => $child->id],
+            ['slug' =>  $gift_link]
+        );
+        
+        $input = $request->pic_src;
+        $output = 'public/images/profile_images/' . $gift_link . '.png';
+        file_put_contents($output, file_get_contents($input));
+        
+        ChildInfo::updateOrCreate(
+            ['id' => $child->id, 'user_id' => $id],
+            ['recipient_image' => 'https://fynches.codeandsilver.com/public/images/profile_images/' . $gift_link . '.png']
+        );
         
     }
     

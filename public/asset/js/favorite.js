@@ -57,7 +57,7 @@ $(document).ready(function( $ ) {
                     } else {
                         $('.heart-'+ favorite).css('color', 'red');
                     var gift =  '<div class="col-md-3 reco_col pointer" id="'+ favorite +'" data-pnum="'+ favorite +'">'+
-'                            <div style="position: relative; background: url('+ data.image +'); width:100%; height:40%; background-size:100% 100%; ">'+
+'                            <div style="position: relative; background: url('+ data.image +'); width:100%; height:250px; background-size:100% 100%; ">'+
 '                                <div style="position: absolute; top: 1em; left: 1em; font-weight: bold; color: #fff;">'+
 '                                    <a href="javascript:void(0)" class="favorited-button" data-pnum="'+ favorite +'"><i class="fas fa-heart fa-2x" style="color:red;"></i></a>'+
 '                                </div>'+

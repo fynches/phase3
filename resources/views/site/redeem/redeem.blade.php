@@ -62,7 +62,7 @@
                 <p>Total Balance</p>
             </div>
             <div class="col-md-6 text-right">
-                <p>$118.00</p>
+                <p>${{$gifted}}</p>
             </div>
         </div>
         
@@ -71,7 +71,7 @@
                 <p>72 Hour Hold Balance <a href="#">What does this mean</a></p>
             </div>
             <div class="col-md-6 text-right">
-                <p> - $18.00</p>
+                <p> - ${{$holding}}</p>
             </div>
         </div>
         
@@ -80,7 +80,7 @@
                 <h5>TOTAL AVAILABLE BALANCE</h5>
             </div>
             <div class="col-md-1 text-left">
-                <h5 class="gift_second">$100.00</h5>
+                <h5 class="gift_second">${{$bank}}</h5>
             </div>
         </div>
     

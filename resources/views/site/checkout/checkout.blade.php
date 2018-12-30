@@ -25,10 +25,10 @@
                 <h5>CHECKOUT</h5>
             </div>
             <div class="col-md-3">
-                <p>Already have an account?<a href="#" id="sig_up" data-toggle="modal" data-target="#largeModalSI"> Log In </a></p>
+                <p>Already have an account?<a href="#" data-toggle="modal" data-target="#largeModalSI"> Log In </a></p>
             </div>
             <div class="col-md-3">
-                <p>Don't have an account? <a href="#" id="sig_in" data-toggle="modal" data-target="#largeModalS"> Sign Up </a></p>
+                <p>Don't have an account? <a href="#" data-toggle="modal" data-target="#largeModalS"> Sign Up </a></p>
             </div>
             <div class="col-md-3">
                 <a href="/gift-live"><button class="btn common btn-border" id="btn_blk">CONTINUE SHOPPING</button></a>

@@ -41,25 +41,39 @@ jQuery(document).ready(function( $ ) {
 				});
 			});
 		});
-	
-		
 		
 function popupResult(result) {
     
-
+        var url = window.location.pathname;
+        var info = url.split('/')[1];
+        var slug = url.split('/')[2];
 		var html;
-		var reader  = new FileReader();
-		if (result.html) {
-			$('#Mychild_photo img').attr('src',result.html);
-		}
 		if (result.src) {
-		    $('#Mychild_photo img').attr('src',result.src);
-		}
-		
-		
-		
+		    if(info == 'parent-child-info') {
+		        $('#drag form p').remove();
+                $('#photo-form').css("border", "none");
+                $( '#picture' ).remove();
+                var image = '<img id="picture" src="'+ result.src +'" style="padding:20px"/>';
+                $( '#pictures' ).append(image);
+		    }
+		    else {
+    		    $('#Mychild_photo img').attr('src',result.src);
+    		    $.ajaxSetup({headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}});
+            
+                 $.ajax({
+        			type: 'post',
+        			url: '/profile-image',
+        			data: {
+        			    image:result.src,
+        			    slug:slug
+        			},
+        		   success: function(data) {
+        		       
+                    }
+        		});
+    		}
+	    }
 	}		
-		
 });
 
 

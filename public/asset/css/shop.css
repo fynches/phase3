@@ -291,6 +291,38 @@
     border: 1px solid #4444ce ;
     font-weight: bold;
 }
+
+#signup-header{
+    padding: 15px !important;;
+    display: inline-block !important;;
+}
+#largeModalS .modal-dialog .modal-content {
+    padding: 0px 50px 20px !important;
+}
+#largeModalSI .modal-dialog .modal-content {
+    padding: 0px 50px 20px !important;;
+}
+.terms-conditions {
+    text-align: center;
+    padding: 20px 30px !important;;
+    font-size: 12px !important;;
+    font-weight: 100 !important;;
+    font-family:'Avenir-Book' !important;;
+}
+
+.signup-title{
+    font-family: Futura-Medium;
+    font-weight:bold !important;;
+    font-size:30px !important;;
+}
+#sign_in{
+    font-family: Avenir !important;;
+    font-weight:bolder !important;;
+    font-size:24px !important;;
+}
+
+
+
 @media only screen and (max-device-width: 746px) {
    #fyn_logo{
     padding-left: 30px;

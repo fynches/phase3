@@ -1,4 +1,18 @@
 jQuery(document).ready(function( $ ) {
+    var count = 0;
+    
+    $('body').on('click', 'button[data-target="#myModal"]',function() {
+           if(count < 1) {
+              $("#lightSlider").lightSlider({
+                  gallery:true,
+                  controls:false,
+                  enableDrag:false,
+                  item:1
+              });
+              count++;
+           }
+        });
+    
     $('body').on('click','button[name="add"]',function() {
         var id = $(this).data('id');
         var slug = window.location.pathname.split('/')[2];
@@ -22,7 +36,7 @@ jQuery(document).ready(function( $ ) {
                         return;
                     } else {
                         var gift =  '<div class="col-md-3 reco_col pointer" id="'+ id +'">'+
-    '                            <div style="position: relative; background: url('+ data.image +'); width:100%; height:40%; background-size:100% 100%; ">'+
+    '                            <div style="position: relative; background: url('+ data.image +'); width:100%; height:250px; background-size:100% 100%; ">'+
     '                                <div style="position: absolute; top: 1em; left: 1em; font-weight: bold; color: #fff;">'+
     '                                    <a href="javascript:void(0)" class="'+ data.favorite +'" data-pnum="'+ id +'"><i class="fas fa-heart fa-2x" '+ style +'></i></a>'+
     '                                </div>'+

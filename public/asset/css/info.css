@@ -753,3 +753,7 @@ section.gift_experience #pos_abs{
 #photo-form {
     cursor:pointer;
 }
+
+#gift_crop .container{
+    width:800px;
+}

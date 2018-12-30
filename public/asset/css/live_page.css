@@ -152,6 +152,10 @@ font-size: 15px;
 .purchase::-ms-input-placeholder { /* Microsoft Edge */
   color: #000;
 }
+#total {
+    border-right: 2px solid #fff;
+    padding-right: 8px;
+}
 #live_textname{
     margin-bottom: 7px;
     width: 44%;

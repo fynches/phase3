@@ -51,12 +51,12 @@
             
             
             
-            @foreach($giftPages as $page)
+            @foreach($giftPages as $i => $page)
             <div class="marg-dash">
             <div class="row">
                 <div class="col-md-2 media">
                     <span class="media-left">
-                        <img src="http://fynches.codeandsilver.com/public/front/img/img5.png" alt="Image Here" style="width: 130px;">
+                        <a href="/gift/{{$page->slug}}"><img src="{{$child_images[$i]}}" alt="Image Here" style="width: 130px;"></a>
                     </span>
                 </div>    
                 <div class="col-md-10 media-body" style="margin-left:20px;">

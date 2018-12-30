@@ -11,6 +11,27 @@ $(document).ready(function( $ ) {
         placeOrder();
     });
     
+    $( "#forgot_pass" ).click(function() {
+        $("#largeModalSI").modal('hide');
+        });
+        
+        $( "#log" ).click(function() {
+                $("#forgot_password").modal('hide');
+        });
+        
+        $( "#sign" ).click(function() {
+                $("#forgot_password").modal('hide');;
+        });
+    
+    $( "#sig_in" ).click(function() {
+        $("#largeModalSI").modal('hide');
+    });
+
+    $( "#sig_up" ).click(function() {
+            $("#largeModalS").modal('hide');
+    });
+    
+    
 function placeOrder() {
  
     $.ajaxSetup({headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}});

@@ -39,7 +39,7 @@
 	    <div class="row" > 
 		    <div class="col-md-12 text-left" id="child_col">
 		        <div class="dropdown" id="my_child">
-    		        <a  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img  src="http://fynches.codeandsilver.com/public/front/img/prof_pic.png"></a>
+    		        <a  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img  src="{{$child_image}}"></a>
                 </div>
 		    </div>
 		 </div>
@@ -147,14 +147,22 @@
                                 <p style="font-weight:100">{{$gift->business->name}}</p>
                                     <div class="row gift_giving text-center four-columns">
                                         <div class="col-md-3 col-xs-6">
-                                            <h6><strong>$<span id="gifted-{{$gift->id}}" data-result="" data-amount="{{$gift->purchase['amount'] - 0}}">{{$gift->purchase['amount'] - 0}}</span></strong></h6>
+                                            @php 
+                                            $sum = $gift->needed($gift_page->id)->sum('amount');
+                                            $gifted = number_format((float)$sum, 2, '.', '');  
+                                            @endphp
+                                            <h6><strong>$<span id="gifted-{{$gift->id}}" data-result="" data-amount="{{$gifted}}">{{$gifted}}</span></strong></h6>
                                             <p style="font-weight:100">GIFTED</p>
                                         </div>
                                         <div class="col-md-3 col-xs-6">
-                                            <h6><strong>$<span  id="needed-{{$gift->id}}" data-result="" data-amount="{{$gift->price - 0}}">{{$gift->price - 0}}</span></strong></h6>
+                                            @php 
+                                            $sums = $gift->price - $gift->needed($gift_page->id)->sum('amount');
+                                            $needed = number_format((float)$sums, 2, '.', '');  
+                                            @endphp
+                                            <h6><strong>$<span  id="needed-{{$gift->id}}" data-result="" data-amount="{{$needed}}">{{$needed}}</span></strong></h6>
                                             <p style="font-weight:100 ">NEEDED</p>
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-6  gift-item">
                                             <a id="gft-{{$gift->id}}" data-id="{{$gift->id}}" href="{{url('checkout')}}" class="btn btn-border yellow-submit give-gift"> GIVE THIS GIFT</a>
                                             <span id="dlr-{{$gift->id}}" class="currencyinput" style="display:none;">$</span>
                                             <input id="prch-{{$gift->id}}" class="purchase" data-id="{{$gift->id}}" type="number" value="" placeholder="Enter Amount" style="display:none;" min="0" max="{{$gift->price - 0}}"/>
@@ -208,7 +216,7 @@
         <div class="row" id="msg">
              
             <div class="col-md-1 col-sm-2 col-xs-4">
-                <img  id="photoIcon" src="http://fynches.codeandsilver.com/public/front/img/prof_pic.png" style="width:100%">
+                <img  id="photoIcon" src="{{$child_image}}" style="width:100%">
             </div>
            
             <div class="col-md-8 col-sm-8 col-xs-8">
@@ -245,7 +253,7 @@
             <div class="col-md-12">
             </div>
             <div class="col-md-1 col-xs-4">
-                <img src="http://fynches.codeandsilver.com/public/front/img/prof_pic.png" style="width:100%">
+                <img src="{{$child_image}}" style="width:100%">
             </div>
             <div class="col-md-11 col-xs-11">
                  <label id="inputName" for="message_name">Name:</label>
@@ -262,8 +270,8 @@
 </section>
 
 <section>
-    <div class="container-fluid checkout-wrap" style="display:none;">
-        <div id="cart">TOTAL $<span id="total">88.00</span> | <a href="/checkout">
+    <div id="checkout" class="container-fluid checkout-wrap" style="display:none;">
+        <div id="cart"><span id="total-text">TOTAL $</span><span id="total">0</span><a href="/checkout">
         <button class="btn common btn-border white-border" id="post_message" style="margin-left: 22px;">CONTINUE TO CHECKOUT</button></a></div>
     </div>    
 </section>

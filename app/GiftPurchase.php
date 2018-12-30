@@ -22,7 +22,10 @@ class GiftPurchase extends Model {
         return $this->hasOne('App\ChildInfo', 'gift_page_id', 'gift_page_id' );
     }
     
-    
+    public function needed($page_id)
+    {
+        return $this->hasMany('App\GiftPurchase','gift_id','id')->where('status', 2)->where('gift_page_id', $page_id);
+    }
 }
 
 ?>

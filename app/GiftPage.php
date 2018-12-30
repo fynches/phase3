@@ -20,6 +20,11 @@ class GiftPage extends Model {
         return $this->hasOne('App\BackgroundImages', 'id', 'background_id' );
     }
     
+    public function purchases()
+    {
+        return $this->hasMany('App\GiftPurchase','gift_page_id','id')->where('status', 2);
+    }
+    
 } 
 
 ?>

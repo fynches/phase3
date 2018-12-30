@@ -40,7 +40,7 @@
 	    <div class="row" > 
 		    <div class="col-md-12 text-left" id="pos_abs_img">
 		        <div class="dropdown">
-    		        <a id="Mychild_photo" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="https://fynches.codeandsilver.com/public/front/img/prof_pic.png" width="75px" id="prof_pic">
+    		        <a id="Mychild_photo" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="{{$gift_page->child->recipient_image}}" width="75px" id="prof_pic">
     		        <img src="https://fynches.codeandsilver.com/public/front/img/Upload.png" style="display:none" id="hover_pic">
     		        </a>
     		        
@@ -151,7 +151,7 @@
             @if(isset($rec_gifts))
                 @foreach($rec_gifts as $gift)
                         <div class="col-md-3 reco_col" id="{{$gift->id}}">
-                            <div style="position: relative; background: url({{$gift->images->image_urls}}); width:100%; height:40%; background-size:100% 100%; ">
+                            <div style="position: relative; background: url({{$gift->images->image_urls}}); width:100%; height:250px; background-size:100% 100%; ">
                                 <div style="position: absolute; top: 1em; left: 1em; font-weight: bold; color: #fff;">
                                     <a href="javascript:void(0)" class="favorite-button"><i class="fas fa-heart fa-2x heart-{{$gift->id}}" @if(!in_array($gift->id,unserialize($gift_page->favorites)))  style="color:#fff;" @else style="color:red;" @endif></i></a>
                                 </div>
@@ -228,7 +228,7 @@
                 @foreach($added_gifts as $gift)
                    
                         <div class="col-md-3 reco_col pointer" id="{{$gift->id}}">
-                            <div style="position: relative; background: url({{$gift->images->image_urls}}); width:100%; height:40%; background-size:100% 100%; ">
+                            <div style="position: relative; background: url({{$gift->images->image_urls}}); width:100%; height:250px; background-size:100% 100%; ">
                                 <div style="position: absolute; top: 1em; left: 1em; font-weight: bold; color: #fff;">
                                     <a href="javascript:void(0)" class="favorite-button"><i class="fas fa-heart fa-2x heart-{{$gift->id}}" @if(!in_array($gift->id,unserialize($gift_page->favorites)))  style="color:#fff;" @else style="color:red;" @endif></i></a>
                                 </div>
@@ -272,7 +272,7 @@
                 @foreach($favorite_gifts as $gift)
                    
                         <div class="col-md-3 reco_col pointer" id="{{$gift->id}}">
-                            <div style="position: relative; background: url({{$gift->images->image_urls}}); width:100%; height:40%; background-size:100% 100%; ">
+                            <div style="position: relative; background: url({{$gift->images->image_urls}}); width:100%; height:250px; background-size:100% 100%; ">
                                 <div style="position: absolute; top: 1em; left: 1em; font-weight: bold; color: #fff;">
                                     <a href="javascript:void(0)" class="favorited-button"  data-pnum="{{$gift->id}}"><i class="fas fa-heart fa-2x heart-{{$gift->id}}" @if(!in_array($gift->id,unserialize($gift_page->favorites)))  style="color:#fff;" @else style="color:red;" @endif></i></a>
                                 </div>
@@ -334,26 +334,6 @@
     <link type="text/css" rel="stylesheet" href="{{ asset('public/asset/css/lightslider.css') }}" />                  
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="{{ asset('public/js/lightslider.js') }}"></script>
-<script>
-   $(document).ready(function($) {
-       var count = 0;
-       $('body').on('click', 'button[data-target="#myModal"]',function() {
-           if(count < 1) {
-              $("#lightSlider").lightSlider({
-                  gallery:true,
-                  controls:false,
-                  enableDrag:false,
-                  item:1
-              });
-              count++;
-           }
-        });
-   });
-   
-   function gifttext() {
-       return "You will receive the cash equivalent of this gift amount when the gift is purchased from your gift page.";
-   }
-</script>
 @stop
 
 

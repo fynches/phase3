@@ -36,6 +36,8 @@ $(document).ready(function( $ ) {
          var need = parseInt(needed) - parseInt(amount);
          var gift = parseInt(gifted) + parseInt(amount);
          
+         $('#checkout').show();
+         
          if(need < 0) {
              var need = 0;
          }
@@ -48,11 +50,21 @@ $(document).ready(function( $ ) {
          if(isNaN(gift)) {
              var gift = gifted;
          }
-         $('#needed-'+id).text(need);
-         $('#gifted-'+id).text(gift);
+         $('#needed-'+id).text(need.toFixed(2));
+         $('#gifted-'+id).text(gift.toFixed(2));
          
          $('#needed-'+id).data('result', need);
          $('#gifted-'+id).data('result', gift);
+         
+        var sum = 0;
+        $(".purchase").each(function(){
+            sum += +$(this).val();
+        });
+        $('#total').text(sum.toFixed(2));
+         
+        var giftedAmount = $('#gifted-'+id).data( "result" );
+        
+        cart(id, giftedAmount); 
          
     });
     
@@ -106,17 +118,17 @@ function giveGift() {
     });
 }
 
-function cart(id, gifted) {
+function cart(id, giftedAmount) {
     var amount = $('#prch-'+id).val();
     var pageid = $('#page-id').val();
-    console.log(gifted);
+    console.log(amount);
     $.ajaxSetup({headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}});
                 
     $.ajax({
     	type:'POST',
     	url:'/gift-live/cart',
     	data:{
-    	    amount:gifted,
+    	    amount:amount,
     	    gift_page_id:pageid,
     	    gift_id:id
     	},

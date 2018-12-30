@@ -38,6 +38,7 @@ class GiftController extends Controller
             $gift_page =  GiftPage::where('user_id', $user->id)->where('slug', $slug)->first();
           
             $child_info =  ChildInfo::where('id', $gift_page->child_info_id)->first();
+            $child_image = $child_info->recipient_image;
             
             if(isset($gift_page->rec_zip)) {
             $rec_ids = unserialize($gift_page->rec_zip);
@@ -61,7 +62,7 @@ class GiftController extends Controller
             
             $background_images =  BackgroundImages::all();
             
-            	return view('site.gift.gift', compact('user', 'gift_page','gifts','background_images', 'rec_gifts', 'favorite_gifts', 'added_gifts', 'added_gifts_ids'));
+            	return view('site.gift.gift', compact('user', 'gift_page','gifts','background_images', 'rec_gifts', 'favorite_gifts', 'added_gifts', 'added_gifts_ids','child_image'));
             
         } else {
             
@@ -128,6 +129,16 @@ class GiftController extends Controller
         }
         
         
+      }
+      
+      public function saveProfileImage(Request $request) {
+          if (Auth::check()) {
+              $user = Auth::user();
+          }
+        $input = $request->image;
+        $slug = $request->slug;
+        $output = 'public/images/profile_images/' . $slug . '.png';
+        file_put_contents($output, file_get_contents($input));
       }
       
       public function updateChildZipcode(Request $request){

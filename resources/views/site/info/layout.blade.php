@@ -12,7 +12,9 @@
 		
 
 	<link href="{{ asset('public/asset/css/info.css') }}" rel="stylesheet">
+	<link href="{{ asset('public/asset/css/demo.css') }}" rel="stylesheet">
 	<link href="{{ asset('public/front/css/style.css') }}" rel="stylesheet">
+	<link href="{{ asset('public/asset/css/croppie.css') }}" rel="stylesheet">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
    <link href="https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css" rel="stylesheet">
    
@@ -43,6 +45,9 @@
 
 
 <script src="{{asset('public/js/info.js')}}"></script>
+<script src="{{asset ('public/js/crop.js')}}"> </script>
+<script src="{{asset ('public/js/croppie.js')}}"> </script>
+<script src="{{asset ('public/js/croppie.min.js')}}"> </script>
 
 @yield('jss')
 </body>

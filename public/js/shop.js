@@ -68,21 +68,21 @@ jQuery(document).ready(function( $ ) {
 			});
     });
     
-    var shop_page = $('#shop-items').children();
-    
     $('.checkbox').click(function(){
         var categories = [];
         var ages = []; 
         var miles = [];
         $('.checkbox[data-id="category"]:checked').each(function(){ categories.push(this.id); });
-        $('.checkbox[data-id="age"]:checked').each(function(){ ages.push(parseInt(this.id,10)); });
-        $('.checkbox[data-id="miles"]:checked').each(function(){ miles.push(parseInt(this.id,10)); });
+        $('.checkbox[data-id="age"]:checked').each(function(){ ages.push(this.id); });
+        $('.checkbox[data-id="miles"]:checked').each(function(){ miles.push(this.id); });
         console.log(categories);
         console.log(ages);
         console.log(miles);
+        
         if((categories === undefined || categories.length === 0) && (ages === undefined || ages.length === 0) && (miles === undefined || miles.length === 0)) {
             $('#shop-items').children().show();
         }
+        
         else {
             $.ajaxSetup({headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}});
             $.ajax({

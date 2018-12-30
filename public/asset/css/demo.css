@@ -228,6 +228,7 @@ h2 {
 }
 .upload-demo.ready .upload-result {
     display: inline-block;    
+    color:white;
 }
 .upload-demo-wrap {
     width: 300px;

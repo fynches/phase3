@@ -29,6 +29,7 @@ use App\Experience;
 use App\FundingReport;
 use App\Testimonial;
 use App\StaticBlock;
+use App\ChildInfo;
 
 class GiftDashboardController extends Controller
 {
@@ -55,7 +56,12 @@ class GiftDashboardController extends Controller
         
 	    $giftPages = GiftPage::where('user_id',$user->id)->get();
 	    
-    	return view('site.gift-dashboard.index', compact('giftPages'));
+	    foreach($giftPages as $i => $page) {
+    	    $child_info =  ChildInfo::where('id', $page->child_info_id)->first();
+            $child_images[$i] = $child_info->recipient_image;
+	    }
+	    
+    	return view('site.gift-dashboard.index', compact('giftPages','child_images'));
         }
 	} 
 	

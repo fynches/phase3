@@ -24,6 +24,11 @@ class Gift extends Model {
     {
         return $this->hasOne('App\AgeRange','id','for_ages');
     }
+    
+    public function needed($page_id)
+    {
+        return $this->hasMany('App\GiftPurchase','gift_id','id')->where('status', 2)->where('gift_page_id', $page_id);
+    }
 }
 
 ?>

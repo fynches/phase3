@@ -62,6 +62,7 @@ Route::post('/account/password', 'Site\AccountController@storePassword');
 Route::post('/account/host-child', 'Site\AccountController@storeHostChild');
 Route::post('/account/location', 'Site\AccountController@storeLocation');
 Route::post('/account/gift-link', 'Site\AccountController@storeLink');
+Route::get('/account/test', 'Site\AccountController@test');
 //************* End Parent Child Info******************//
 
 
@@ -70,6 +71,7 @@ Route::post('/account/gift-link', 'Site\AccountController@storeLink');
 Route::get('/gift/{first_name}', 'Site\GiftController@index')->name('gift');
 Route::post('/update-gift-page', 'Site\GiftController@updateGiftPage');
 Route::post('/background-image', 'Site\GiftController@saveBackgroundImages');
+Route::post('/profile-image', 'Site\GiftController@saveProfileImage');
 Route::post('/update-child-zipcode', 'Site\GiftController@updateChildZipcode');
 Route::post('/giftDetails', 'Site\GiftController@giftDetails');
 

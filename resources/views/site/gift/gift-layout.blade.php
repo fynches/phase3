@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
 	<title>Fynches</title>
@@ -51,12 +52,12 @@
 @yield('footer')
 
 
-<script src="{{asset ('public/js/gift.js')}}"> </script>
-<script src="{{asset ('public/js/crop.js')}}"> </script>
-<script src="{{asset ('public/js/croppie.js')}}"> </script>
-<script src="{{asset ('public/js/demo.js')}}"> </script>
-<script src="{{asset ('public/js/croppie.min.js')}}"> </script>
-<script src="{{ asset('public/asset/js/favorite.js') }}"></script>
+<script src="{{asset ('public/js/gift.js')}}"></script>
+<script src="{{asset ('public/js/crop.js')}}"></script>
+<script src="{{asset ('public/js/croppie.js')}}"></script>
+<script src="{{asset ('public/js/demo.js')}}"></script>
+<script src="{{asset ('public/js/croppie.min.js')}}"></script>
+<script src="{{asset('public/asset/js/favorite.js')}}"></script>
 @yield('jss')
 
 </body>

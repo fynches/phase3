@@ -37,20 +37,14 @@ class LiveGiftController extends Controller
             $gift_page =  GiftPage::where('slug', $slug)->first();
             
             $child_info =  ChildInfo::where('id', $gift_page->child_info_id)->first();
-            
-            
-          //  var_dump($child_info);
-          //  return;
+            $child_image = $child_info->recipient_image;
             
             if(isset($gift_page->added_gifts)) {
             $added_gifts_ids = unserialize($gift_page->added_gifts);
             $added_gifts = Gift::whereIn('id',$added_gifts_ids)->get();
             }
             
-            
-           // $ago = $this->time($child_info->message->created_at);
-            
-            return view('site.live-gift-page.live-gift', compact('child_info', 'added_gifts', 'gift_page'));
+            return view('site.live-gift-page.live-gift', compact('child_info', 'added_gifts', 'gift_page', 'session_view','child_image'));
       }
     
     public function sendMessage(Request $request) {
@@ -74,14 +68,14 @@ class LiveGiftController extends Controller
         $amount = $request->amount;
         $gift_page_id = $request->gift_page_id;
         $gift_id = $request->gift_id;
+        $session_id = session()->getId();
         
-        $gift_purchase = new GiftPurchase;
-        $gift_purchase->amount =  $amount;
-        $gift_purchase->gift_page_id = $gift_page_id;
-        $gift_purchase->gift_id = $gift_id;
-        $gift_purchase->session_id = session()->getId();
-        $gift_purchase->status = 1;
-        $gift_purchase->save();
+        $gift_purchase = GiftPurchase::updateOrCreate(
+            ['session_id' => $session_id, 'status' => 1, 'gift_id' => $gift_id],
+            ['status' => 1, 'amount' => $amount,
+             'gift_page_id' => $gift_page_id, 'gift_id' => $gift_id
+            ]
+            );
         
         return response()->json(['success' => 1]);
      

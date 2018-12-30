@@ -2,7 +2,7 @@
   <div class="modal-dialog  modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-body">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="$('#gift_crop').hide();">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" data-toggle="modal" data-target="#gift_crop">
           <span aria-hidden="true">&times;</span>
         </button>
          <h5 class="text-center">UPLOAD PHOTO</h5>
@@ -17,7 +17,7 @@
                                     <span>Upload</span>
                                     <input type="file" id="upload" value="Choose a file" accept="image/*" />
                                 </a>
-                                <button class="upload-result">Result</button>
+                                <button class="upload-result" data-toggle="modal" data-target="#gift_crop">Save Image</button>
                             </div>
                         </div>
                         <div class="col-1-2">
