@@ -1,0 +1,82 @@
+.arrow-up {
+  width: 0; 
+  height: 0; 
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid black;
+  margin-left: 155px;
+  margin-top: 20px;
+}
+.report_head{
+    min-height:100px;
+}
+.cont {
+    margin:0 40px !important;
+}
+#report_head{
+    font-size: 4em;
+    font-weight: bold;
+    color: #4444ce;
+    font-family: Futura-Medium;
+}
+.gift_report h1{
+    font-size: 3em;
+    font-weight: bold;
+    font-family: Futura-Medium;
+}
+.gift_marg{
+    margin-top:30px;
+    margin-bottom:30px;
+}
+.gift_report p{
+    font-family:'Avenir-Book';
+}
+#report_info h5{
+    font-weight:bold;
+    font-size:18px;
+    font-family: Futura-Medium ;
+}
+
+#report_info{
+    margin:20px 0;
+}
+#report_tab{
+    margin:40px 0;
+    padding: 0 100px;
+}
+#report_tab h5{
+    font-weight:bold;
+    font-size:15px;
+    font-family: Futura-Medium ;
+}
+#report_tab p{
+     font-family: Avenir-Book ;
+}
+
+#report_tab .yellow-submit{
+border: 1px solid #ffdb4c;
+    background: #ffdb4c;
+    color: #4444ce;
+    font-family: Avenir-Book;
+    padding:10px 10px;
+    margin:10px !important;
+    
+}
+#report_trans h5{
+    font-family: Avenir-Book;
+}
+#report_trans{
+    padding:10px 0;
+    border-top: 1px solid #f2f2f2;
+    border-bottom: 1px solid #f2f2f2;
+}
+#report_trans p{
+     font-family: Avenir-Book;
+     margin:10px 0;
+}
+#shop_list{
+    margin:20px 0;
+}
+.gift_report{
+    margin-bottom:100px;
+}

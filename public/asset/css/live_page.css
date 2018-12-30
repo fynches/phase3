@@ -1,0 +1,313 @@
+section.live_experience
+{
+    position: relative;
+    width: 100%;
+    min-height: 350px;
+    padding: 50px 0 65px; 
+    background: url('http://fynches.codeandsilver.com/public/front/img/party.jpg');
+    transition: all 0.3s ease-in-out; 
+    -moz-transition: all 0.3s ease-in-out; 
+    -ms-transition: all 0.3s ease-in-out; 
+    -o-transition: all 0.3s ease-in-out; 
+    -webkit-transition: all 0.3s ease-in-out; 
+    background-size: cover;
+    
+}
+
+section.live_experience #pos_abs{
+    position:absolute;
+    bottom:10%;
+    width:100%;
+}
+
+.live_experience #pos_abs_img{
+    position:absolute;
+    bottom:-10%;
+    width:100%;
+}
+.live_experience #pos_abs_img img{
+    width: 15%;
+    margin: -50px 15px;
+}
+
+.live_box #live_column h5{
+    padding: 30px 10px;
+    margin-left: auto;
+    width: 75%;
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #000;
+    font-family: Futura-Medium;
+   /* float: right;*/
+}
+
+.live_details label{
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Futura-Medium;
+    margin-bottom: 0px;
+    margin: 10px 0;
+}
+.live_details{
+    margin-bottom: 5%;
+}
+.live_details p{
+    text-align:justify;
+    font-size:17px;
+}
+
+#live_text{
+    padding:0 50px;
+}
+#live_col_2{
+    padding:0 50px; 
+}
+#live_col_2 h5{
+    margin: 0px;
+    font-size: 17px;
+    font-family: Avenir-Book;
+}
+#live_col_2 p{
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Futura-Medium;
+    margin-bottom: 0px;       
+    margin: 10px 0;
+}
+
+.gift_giving .yellow-submit{
+    border: 1px solid #ffdb4c;
+    background: #ffdb4c;
+    color: #4444ce;
+    font-family: Avenir-Book;
+    margin: 10px !important;
+    font-size: 17px;
+}
+.gift_giving h6{
+    font-weight:bold;
+    font-size:17px;
+}
+.gift_giving{
+    margin: 70px 0 20px 0 !important;
+}
+.live_messages p {
+ font-size:16px;
+ margin-bottom: 5%;
+font-size: 15px;
+}
+.fa-clock{
+    color:#d9d9d9;
+    letter-spacing: 10px;
+}
+#message-form{
+    padding-bottom: 25%;
+}
+
+#msg{
+    padding:20px;
+    margin: 20px 0;
+    border-bottom:1px solid #f2f2f2;
+}
+#titlemessage{
+    font-size: 16px;
+    margin: 1%;
+}
+.small_msg{
+    font-size:16px;
+    text-align:justify;
+}
+#live_textmsg{
+    width:100%;
+    padding:20px;
+    border:1px dashed #000;
+    min-height:100px;
+}
+.btn_blk{
+    background: #fff !important;
+    font-family: 'Avenir-Book';
+    font-size:16px !important;
+    color: #000 !important;
+    margin: 0px 5px;
+    width: fit-content;
+    padding:10px !important;
+    border: 1px solid #000 !important;
+}
+.purchase {
+    color: #000;
+    width:65%;
+    padding: 5px 0px 5px 20px;
+    margin: 10px 0px;
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+.purchase::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #000;
+  opacity: 1; /* Firefox */
+}
+
+.purchase:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #000;
+}
+
+.purchase::-ms-input-placeholder { /* Microsoft Edge */
+  color: #000;
+}
+#live_textname{
+    margin-bottom: 7px;
+    width: 44%;
+    height: 43px;
+    border-style: dashed;
+    padding: 10px 20px;
+}
+#inputName{
+    display: block;  
+}
+.four-columns h6 {
+        margin-bottom: 3px;
+}
+.four-columns p {
+    padding: 0px;
+    font-size: 11px;
+}
+.four-columns a {
+    margin: 10px !important;
+    font-size: 13px!important;
+}    
+.currencyinput {
+    position: absolute;
+    top: 16px;
+    left: 42px;
+}
+
+#child_col{
+    position: absolute;
+    bottom: -10%;
+    width: 100%;
+}
+
+#my_child img{
+    width: 15%;
+    margin: -50px 100px;
+}
+
+
+.cart{
+    display:none;
+    width: 100%;
+    background: black;
+    opacity: 0.7;
+    padding: 60px 100px;
+    height: 285px;
+    position: relative;
+}
+.gifted_icon{
+    display:none;
+    width: 100%;
+    background: black;
+    opacity: 0.7;
+    padding: 60px 130px;
+    height: 285px;
+    position: relative;
+} 
+.cancel{
+    display:none;
+    background: black;
+    color: white;
+    font-size: 17px !important;
+    padding: 10px !important;
+    position: initial;
+    top: 241px;
+    width: 100%;
+}
+.checkout-wrap {
+    background-color: #34344aed;
+    color: #fff;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    font-size: 25px;
+    font-weight: bold;
+}
+.white-border {
+    border: 1px solid #fff!important;
+}
+button.white-border:hover {
+    background-color: #fff;
+    color: #34344a!important;
+}
+#cart {
+    float: right;
+    padding: 20px 0px;
+}
+
+@media only screen and (max-width: 769px) {
+ .live_box #live_column h5 {
+    width: 65%;
+    padding: 15px 15px 15px 15px;
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #000;
+    font-family: Futura-Medium;
+ }
+ #footer_header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 3vh;
+ }
+ #icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+ }
+  #rights{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+ }
+ 
+
+}
+
+
+@media only screen and (max-width: 767px ){
+    #my_child img{
+    position: absolute;
+    left: 50px;
+    margin: -300px 20px 0 20px;
+    width:auto;
+  } 
+  .cart{
+     height:auto !important;
+ }
+  
+}
+
+
+
+@media only screen and (max-width: 375px ) {
+
+.live_box #live_column h5 {
+    width: 78%;
+    padding: 15px 15px 15px 15px;
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #000;
+    font-family: Futura-Medium;
+  }
+#icon, #rights, terms{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+ }
+ /*#photoIcon{*/
+ /*    width: 100vh;*/
+ /*}*/
+ #live_textname{
+     width:77%;
+ }
+}
+

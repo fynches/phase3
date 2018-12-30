@@ -206,17 +206,32 @@ class ShopController extends Controller
         $ages = $request->ages;
         $miles = $request->miles;
         
+        $searchCategories = array();
+        $searchAges = array();
+        $searchMiles = array();
+        
         $gifts = Gift::all();
         
         foreach($gifts as $i => $gift) {
-            if(!empty(array_intersect(unserialize($gift->categories),$categories))) {
+            if(!empty($categories) && !empty(array_intersect(unserialize($gift->categories),$categories))) {
                 $searchCategories[$i] = $gift->id;
             }
-            if(array_search($gift->for_ages,$ages)) {
+            if(!empty($ages) && array_search($gift->for_ages,$ages) !== false) {
                 $searchAges[$i] = $gift->id;
             }
         }
-        $gift_ids = array_intersect($searchCategories,$searchAges);
+        
+        if(!empty($categories) && empty($ages)) {
+            $gift_ids = $searchCategories;
+        }
+        
+        else if(!empty($ages) && empty($categories)) {
+            $gift_ids = $searchAges;
+        }
+        else {
+            $gift_ids = array_intersect($searchCategories,$searchAges);
+        }
+        
 	       
         return response()->json(['gift_id' => $gift_ids]);
 	}

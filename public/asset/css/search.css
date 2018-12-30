@@ -1,0 +1,71 @@
+/* enable absolute positioning */
+.inner-addon {
+  position: relative;
+}
+
+/* style glyph */
+.inner-addon .glyphicon {
+  position: absolute;
+  padding: 10px;
+  pointer-events: none;
+}
+
+/* align glyph */
+.left-addon .glyphicon  { left:  0px;}
+
+
+/* add padding  */
+.left-addon input  { padding-left:  30px; }
+
+#search_input{
+    margin:0 300px;
+}
+#search_input input{
+    border-radius:0px;
+    border:1px solid #000;
+}
+.search_cont{
+    margin:50px 0;
+}
+.search_cont h5{
+    font-size:20px;
+    font-family:Futura-Medium;
+    margin:20px 0;
+}
+.search_cont p.text-center{
+    font-family:'Futura-Medium';
+    margin:30px 0;
+}
+#search_result{
+    padding: 20px 100px;
+    border-top:1px solid #000;
+    border-bottom:1px solid #000;
+}
+#search_result img{
+    width:100%;
+    margin: 15px 0;
+}
+.search_row{
+    padding:0 100px;
+}
+#search_result .btn-purp{
+    color:#4444ce;
+    border:1px solid #4444ce;
+    padding:20px;
+    margin:10px 0;
+    font-family:Avenir-Book;
+}
+#search_result .btn-purp:hover{
+    color:#fff;
+    border:1px solid #4444ce;
+    background-color:#4444ce;
+    padding:20px;
+    margin:10px 0;
+}
+
+
+@media only screen and (max-width: 320px) {
+  body {
+    background-color: lightblue;
+  }
+}

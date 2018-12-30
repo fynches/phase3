@@ -294,7 +294,7 @@
                 <div class="row" id="shop-items">
                 @if(isset($gifts))
                     @foreach($gifts as $gift)
-                        <div class="col-md-3 reco_col" id="{{$gift->id}}">
+                        <div class="col-md-4 reco_col" id="{{$gift->id}}" style="margin-bottom:20px">
                             <div style="position: relative; background: url({{$gift->images->image_urls}}); height:250px;background-size:100% 100%; ">
                                 <div style="position: absolute; top: 1em; left: 1em; font-weight: bold; color: #fff;">
                                     <a href="javascript:void(0)" class="favorite-button"@if(!in_array($gift->id,unserialize($gift_page->favorites)))  style="color:#fff;" @else style="color:red;" @endif class="unfavorite-button"><i class="fas fa-heart fa-2x"></i></a>

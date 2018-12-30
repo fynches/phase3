@@ -1,0 +1,344 @@
+#add_form #gift_desc{
+    min-height:150px !important;
+    border: 1px solid black;
+}
+#gift_Add #add_form{
+    margin:20px;
+}
+
+#gift_Add h5{
+    font-family:'Futura-Medium';
+    font-weight:bold;
+    font-size:20px;
+    margin:30px;
+}
+
+#add_form input{
+    border: 1px solid black;
+    margin-bottom:10px;
+} 
+#add_form label{
+    font-family:'Futura-Medium';
+    font-weight:bold;
+    font-size:16px;
+}
+#gift_amount {
+    margin-top:20px;
+}
+#gift_amount .yellow_submit{
+    margin-top: 30px;
+    background:#FFDE33;
+    color: #4444ce;
+    border:1px solid #FFDE33;
+}
+.gift_reco #marg{
+    margin-top:90px;
+}
+#shop_head{
+ min-height:90px;   
+}
+#shop_list{
+    margin-top:10px;
+}
+#shop_head .cont{
+    margin:0 40px;
+}
+.shop_btns{
+    margin:30px 0;
+}
+.shop_btns .cont{
+    margin:0 40px;
+}
+#btn_blk{
+    background: #fff !important;
+    font-family:'Avenir-Book';
+    color: #000 !important;
+    margin: 0px 5px;
+    width: fit-content;
+    padding: 0px 30px;
+    border: 1px solid #000;
+    font-weight:bold;
+}
+#btn_blk:hover{
+    color:#4444ce !important;
+    border: 1px solid #4444ce;
+}
+.shop_experience .cont{
+    margin:0 40px;
+    min-height:250px;
+    background: url('http://fynches.codeandsilver.com/public/front/img/party.jpg');
+    transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    background-size: cover;
+    
+}
+.shop_experience .shop_title{
+    color:#000;
+    font-family:'Futura-Medium';
+    font-weight:bold;
+    font-size:2em;
+    margin-bottom:0px;
+}
+.shop_experience .row{
+    margin:30px 0;
+}
+.shop_experience h5 {
+    margin-top:0px;
+    margin-bottom:20px;
+}
+.shop_experience p{
+    font-family:'Avenir-Book';
+    font-size:15px;
+}
+.shop_sort .cont{
+    margin:30px 40px;
+}
+.shop_sort .cont .col-md-12{
+    padding:0px;
+}
+.shop_sort .btn{
+    background:#fff;
+    border:0px;
+    font-family:'Futura-Medium';
+    color:#000;
+}
+.shop_sort .btn:hover{
+    background:#fff;
+    border:0px;
+    color:#000;
+}
+.shop_sort .btn:active,.btn:focus{
+    background:#fff !important;
+    border:0px !important;
+    color:#000 !important;
+}
+.shop_sort #shop_drop{
+    margin:0px !important;
+    left:85%;
+}
+.shop_sort #shop_drop{
+    padding:0px;
+}
+.shop_sort #shop_drop li{
+    border-bottom:1px solid #fafafa;
+    font-family:'Avenir-Book';
+}
+#shop_cat .cont{
+    margin:0 30px;
+}
+#shop_cat .icon{
+    background:#000;
+    color:white;
+    border-radius:5px;
+}
+#shop_cat h5{
+   font-family:'Futura-Medium';
+   font-weight:bold;
+   font-size: 16px;
+   margin:20px 0px;
+}
+#shop_cat li{
+    margin:10px 0;
+    font-family:'Avenir-Book';
+}
+#shop_cat #zip_code{
+    width:60%;
+}
+#shop_cat{
+    margin-bottom:50px;
+}
+.step_1{
+    margin-bottom:30px;
+}
+.step_1 h5{
+  font-family:'Futura-Medium';
+  font-weight:bold;
+  font-size: 20px;  
+  margin:10px;
+}
+.step_1 .cont{
+    margin:0px 40px;
+}
+.step_1 .cont h4{
+  font-family:'Futura-Medium';
+  font-weight:bold;
+  font-size: 16px; 
+  padding: 30px 0;
+  border-bottom:2px solid #f2f2f2;
+}
+.step_1 .cont .step_gift{
+    padding:30px 0;
+    border-bottom:2px solid #f2f2f2;
+}
+
+.step_1 .cont .step_price p{
+    margin:10px 0;
+}
+.step_1 .cont #step_amt{
+     margin:10px 0;
+}
+
+#tot_amt h1{
+    font-family:'Avenir-Book';
+  font-weight:bold;
+  font-size: 25px; 
+}
+.total_amt{
+    margin:20px 0;
+}
+.total_amt h5{
+    margin: 20px 0;
+    font-size: 25px;
+}
+.gift_message{
+    margin-bottom:30px;
+}
+.gift_message .cont{
+    margin: 0 40px;
+}
+.gift_message h5{
+    font-family: 'Futura-Medium';
+    font-weight: bold;
+    font-size: 20px;
+    margin: 10px;
+    
+}
+.gift_message h6{
+    font-family:'Futura-Medium';
+    font-size:15px;
+    padding:10px 0;
+}
+.gift_message h6 span{
+    font-size:12px;
+}
+.gift_message textarea{
+    min-height:100px;
+}
+.gift_message .msg_pad{
+    padding:30px 0;
+}
+.gift_payment .cont{
+    margin: 0 40px;
+    margin-bottom:30px;
+}
+.gift_payment h5{
+   font-family: 'Futura-Medium';
+    font-weight: bold;
+    font-size: 20px;
+    margin: 10px;
+    
+}
+.gift_payment .container .row{
+    padding: 20px 0;
+}
+.gift_payment p{
+    font-family: 'Futura-Medium';
+    font-weight: bold;
+}
+.gift_payment input {
+    border:1px solid black;
+}
+.gift_payment select {
+    border:1px solid black;
+}
+.gift_bill .cont{
+    margin:0 40px;
+}
+.gift_bill h5{
+  font-family: 'Futura-Medium';
+    font-weight: bold;
+    font-size: 20px;
+    margin: 10px;  
+}
+.gift_bill .container .row{
+    padding: 20px 0;
+}
+.gift_bill input{
+    border:1px solid black;
+}
+.gift_bill p{
+    font-family: 'Futura-Medium';
+    font-weight: bold;
+}
+
+.gift_bill .yellow-submit{
+    border: 1px solid #ffdb4c;
+    background: #ffdb4c;
+    color: #4444ce;
+    font-family: Avenir-Book;
+    padding: 10px;
+}
+.gift_bill .yellow-submit:hover{
+    border: 1px solid #ffdb4c;
+    background: #ffdb4c;
+    color: #4444ce;
+    font-family: Avenir-Book;
+    padding: 10px;
+}
+.gift_bill{
+    margin-bottom:40px;
+}
+#btn_purp{
+    background: #fff !important;
+    font-family: 'Avenir-Book';
+    color: #4444ce  !important;
+    margin: 0px 5px;
+    width: fit-content;
+    padding: 20px;
+    border: 1px solid #4444ce ;
+    font-weight: bold;
+}
+@media only screen and (max-device-width: 746px) {
+   #fyn_logo{
+    padding-left: 30px;
+    margin: 30px 0;
+    height: 30px;
+   }
+  #btn_blk {
+    margin:5%;
+    width: 105%;
+  }
+ .shop_title {
+    font-size: 2em; 
+  }
+.reco_col .btn_purp {
+    border: 1px solid #4444ce;
+    background: #fff;
+    color: #4444ce;
+    font-family: Futura-Medium;
+    font-size: 12px;
+    width: 100%;
+}
+.reco_col .yellow_submit{
+    border: 1px solid #ffdb4c;
+    background: #ffdb4c;
+    color: #4444ce;
+    font-family: Futura-Medium;
+    font-size: 12px;
+    width: 100%;
+}
+.fheader{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom:10px;
+}
+    
+}
+
+@media only screen and (max-device-width: 425px) {
+  .fheader{
+        display: flex;
+        align-content: center;
+        justify-content: center;
+    }
+  #fyn_logo{
+    padding-left: 5px;
+    margin: 29px 0;
+    height: 30px;
+    }
+    
+}
