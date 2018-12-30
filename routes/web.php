@@ -26,7 +26,7 @@ Route::get('/login', function() {
 //*************Start Gift_Dashboard******************//
 Route::get('/gift-dashboard', 'Site\GiftDashboardController@index');
 Route::get('/gifted', 'Site\GiftDashboardController@gifted');
-Route::post('/delete-gifted', 'Site\GiftDashboardController@deleteGift')->name('delete-gift');;
+Route::post('/gift-dashboard/delete', 'Site\GiftDashboardController@deleteGift')->name('delete-gift');;
 Route::get('/event', 'Site\EventController@create')->name('event');
 
 

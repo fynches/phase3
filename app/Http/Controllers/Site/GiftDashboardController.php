@@ -31,6 +31,7 @@ use App\Testimonial;
 use App\StaticBlock;
 use App\ChildInfo;
 
+
 class GiftDashboardController extends Controller
 {
     /**
@@ -75,6 +76,16 @@ class GiftDashboardController extends Controller
 	    
     	return view('site.gift-dashboard.gifted', compact('purchases'));
         }
-	}   
+	}
+	
+	public function deleteGift(Request $request)
+	{
+	    if (Auth::check()) {
+        
+	    GiftPage::destroy($request->gift_page_id);
+	    
+    	return response()->json(['result' => 'success']);
+        }
+	}
     
 }

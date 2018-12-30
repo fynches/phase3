@@ -52,7 +52,7 @@
             
             
             @foreach($giftPages as $i => $page)
-            <div class="marg-dash">
+            <div id="page-{{$page->id}}" class="marg-dash">
             <div class="row">
                 <div class="col-md-2 media">
                     <span class="media-left">
@@ -80,7 +80,7 @@
                     <a href="/redeem-gifts"><i style="font-size:24px;margin-left:20px;color: black;" class="fa fa-bank"></i></a>
                     <a href="/gift-report/{{$page->slug}}"><i style="font-size:24px;margin-left:20px;color: black;" class="far fa-file-alt"></i></a>
                     <a href="/gift/{{$page->slug}}"><i style="font-size:24px;margin-left:20px;color: black;" class="far fa-edit"></i></a>
-                    <a id="delete-gift" href=""><i style="font-size:24px;margin-left:20px;color: black;" class="far fa-trash-alt"></i></a>
+                    <a class="delete-gift" href=""data-id="{{$page->id}}"><i style="font-size:24px;margin-left:20px;color: black;" class="far fa-trash-alt"></i></a>
                 </div>
             </div>
             </div>
@@ -89,6 +89,7 @@
         </div>
     </div>
 </div>
+<script src="{{ asset('public/js/dashboard.js') }}"></script>
 @endsection
  
 @section('footer')

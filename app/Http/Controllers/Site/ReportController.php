@@ -53,7 +53,11 @@ class ReportController extends Controller
                 
                 $count = $gift_page->purchases->count();
                 
+                if($count == 0) {
+                    $avaerage = 0;
+                } else {
                 $avaerage = $purchases /$count;
+                }
                 $avaerage = number_format((float)$avaerage, 2, '.', '');
                 
                 //Balance Calculation
