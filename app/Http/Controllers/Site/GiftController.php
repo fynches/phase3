@@ -40,19 +40,19 @@ class GiftController extends Controller
             $child_info =  ChildInfo::where('id', $gift_page->child_info_id)->first();
             $child_image = $child_info->recipient_image;
             
-            if(isset($gift_page->rec_zip)) {
+            if(!empty(unserialize($gift_page->rec_zip))) {
             $rec_ids = unserialize($gift_page->rec_zip);
             $rec_gifts = Gift::whereIn('id',$rec_ids)->get();
             }
             
-            if(isset($gift_page->favorites)) {
+            if(!empty(unserialize($gift_page->favorites))) {
             $favorite_ids = unserialize($gift_page->favorites);
             $favorite_gifts = Gift::whereIn('id',$favorite_ids)->get();
             }
             
-            if(isset($gift_page->added_gifts)) {
+            if(!empty(unserialize($gift_page->added_gifts))) {
             $added_gifts_ids = unserialize($gift_page->added_gifts);
-            $added_gifts = Gift::whereIn('id',$added_gifts_ids)->get();
+            $added_gifts = Gift::whereIn('id',$added_gifts_ids)->orderByRaw('FIELD(id, '.implode(',', $added_gifts_ids).')')->get();
             }
             
             if(!isset($gift_page->id)){
@@ -194,6 +194,22 @@ class GiftController extends Controller
             ['user_id' => $user->id]
           );
           
+      }
+      
+      public function giftSort(Request $request) {
+          
+          if (Auth::check()) {
+            $user = Auth::user();
+          }
+          $ids = $request->ids;
+          $slug = $request->slug;
+          $giftPage = GiftPage::where('user_id',$user->id)->where('slug',$slug)->first();
+        
+          $giftPage->added_gifts = serialize($ids);
+          $giftPage->save();
+          
+          return response()->json(['message' => $ids]);
+                      
       }
       
       public function test() {

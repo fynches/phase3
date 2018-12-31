@@ -21,7 +21,7 @@
 					</div>
 					<div class="form-group">
 					    <label for="password" class="required">PASSWORD</label>
-        				<input required type="text" id="signin-password" name="login_password" class="form-control required" minlength=8>
+        				<input required type="password" id="signin-password" name="login_password" class="form-control required" minlength=8>
         				<p class="text-right"><a href="#" data-toggle="modal" id="forgot_pass" data-target="#forgot_password" style="color:#FF0055 !important">Forgot Password?</a></p>
 					</div>
 					<button type="submit" class="btn common pink-btn">SIGN IN WITH EMAIL</button>

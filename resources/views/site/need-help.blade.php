@@ -22,7 +22,7 @@
 </section>
 <!-- End -->
 
-@if(count($need_help) > 0)
+@if(isset($need_help->description))
 	{!!html_entity_decode($need_help->description)!!}
 @else
 	<section class="banner-sec">

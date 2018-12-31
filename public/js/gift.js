@@ -29,16 +29,38 @@ jQuery(document).ready(function( $ ) {
         $('#cancel_1-'+id).hide();
     });  
     
-    
-    $(".all_gifts").sortable({
-  
-      axis: "x",
-      revert: true,
-      scroll: false,
-      placeholder: "sortable-placeholder",
-      cursor: "move"
-    
-    });    
+    $('.added_gifts .draggable').mousedown(function() {
+        if($(".added_gifts").is(':ui-sortable')) {
+            $(".added_gifts").sortable('enable');
+        }
+        else {
+            $(".added_gifts").sortable({
+                update: function(event, ui) {
+                    $(".added_gifts").sortable('disable');
+                    var ids = [];
+                    var slug = window.location.pathname.split('/')[2];
+                    $('.added_gifts .reco_col').each(function(i){
+                        if($(this).length && !isNaN(parseInt($(this).attr('id'),10))) {
+                            ids[i] = parseInt($(this).attr('id'),10);
+                        }
+                    });
+                    ids = ids.filter(function(v){return v!== (undefined || null)});
+                   $.ajaxSetup({headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}}); 
+                   $.ajax({
+            			type: 'post',
+            			url: '/giftSort',
+            			data: {
+            			    ids:ids,
+            			    slug:slug
+            			},
+            		   success: function(data) {
+            		       
+                        }
+            		});
+                }
+            });
+        }
+    });
     
     $('body').on('click','button[name="add"]',function() {
         var id = $(this).data('id');

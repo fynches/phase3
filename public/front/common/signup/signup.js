@@ -7,13 +7,12 @@
 	        unhighlight: function (element) {
 	            $(element).parent('div').removeClass('has-error');
 	        },
-	        errorElement: 'span',
 	        errorClass: 'help-block help-block-error',
 	        errorElement: 'div',
 	        rules: {
 				email: {required: true},
 				password: {required: true, minlength: 8},
-				confirm_password: {required: true, minlength: 8, equalTo: "#password"},
+				confirm_password: {required: true, minlength: 8, equalTo: "#signup-password"},
 			},
 			messages: {
 			    confirm_password: {equalTo: "Password does not match"},
@@ -93,7 +92,7 @@
 				       console.log(data);
 					   	if(data.result == "login-error"){
 							
-							$("div[for='email']").html('Email and Password combination do not match a current user!');
+							$("div[for='signin-email']").html('Email and Password combination do not match a current user');
 						}else {
 							url = "http://fynches.codeandsilver.com/gift-dashboard";
                             $( location ).attr("href", url);

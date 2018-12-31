@@ -10,11 +10,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
-          	@if(Auth::guard('site')->check())             
-             <li class="nav-item dashboard-item">
-                <a class="nav-link" href="{{ url('dashboard') }}">Dashboard</a>
-              </li>              
-           @endif
+          	
             <!-- <li class="nav-item">
               <a class="nav-link" href="/dashboard">Dashboard</a>
             </li> -->
@@ -25,12 +21,7 @@
               <a class="nav-link" href="{{env('SITE_URL')}}/blog">BLOG</a>
             </li>
             <li class="nav-item">
-              <?php $users= Auth::guard('site')->user();?>
-            	@if(Auth::guard('site')->check())
-             		<a class="nav-link" href="{{ route('site.logout') }}">LOGOUT</a>	
-            	@else
-            		<a class="nav-link" href="javascript:void(0)"  data-toggle="modal" data-target="#login">SIGN IN</a>
-              	@endif	
+              	
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{{ url('event') }}">GET STARTED</a>
@@ -87,7 +78,3 @@ $(document).on('click', '.home_search', function(e) {
 <!-- End -->
 
 
-@include('site.modal.login')
-@include('site.modal.forgot-password')
-
-{{Html::script("/front/common/user/site_login.js")}}

@@ -299,10 +299,10 @@
 				</div>
 				<div  id="icon" class="col-sm-12 col-md-3 col-lg-3 text-right home">
 					<ul class="social">
-						<li><a href="javascript:void(0)"><i class="fab fa-twitter"></i></a></li>
-						<li><a href="javascript:void(0)"><i class="fab fa-facebook-f"></i></a></li>
-						<li><a href="javascript:void(0)"><i class="fab fa-instagram"></i></a></li>
-						<li><a href="javascript:void(0)"><i class="fab fa-pinterest-p"></i></a></li>
+						<li><a href="https://twitter.com/fynches" target="blank"><i class="fab fa-twitter"></i></a></li>
+						<li><a target="_blank" href="https://www.facebook.com/usefynches/"><i class="fab fa-facebook-f"></i></a></li>
+						<li><a target="_blank" href="https://www.instagram.com/fynches/"><i class="fab fa-instagram"></i></a></li>
+						<li><a target="_blank" href="https://www.pinterest.com/usefynches/"><i class="fab fa-pinterest-p"></i></a></li>
 					</ul> 
 				</div>
 			</div>

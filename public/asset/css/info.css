@@ -583,16 +583,12 @@ section.gift_experience #pos_abs{
 }
 
 .added_gifts label{
-    font-size:20px;
     font-weight:bold;
     font-family: Futura-Medium;
-    margin:20px;
     text-transform: uppercase;
 }
 .added_gifts p{
-    font-size:18px;
     font-family: Avenir;
-    margin:10px;
 }
 .added{
     padding:40px;

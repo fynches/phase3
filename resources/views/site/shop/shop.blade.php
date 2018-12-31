@@ -43,7 +43,6 @@
     <div class="container-fluid cont">
         <div class="row">
             <div class="col-md-12 text-right">
-                <button class="btn common btn-border" id="btn_blk" data-toggle="modal" data-target="#gift_Add">CREATE CUSTOM GIFT</button>
 				<a href="/gift-page/{{$gift_page->slug}}"><button class="btn common btn-border" id="btn_blk">PREVIEW GIFT PAGE</button><a/>
 				<a href="/gift/{{$gift_page->slug}}"><button class="btn common btn-border" id="btn_blk">MANAGE GIFT PAGE</button><a/>
             </div>
@@ -94,7 +93,7 @@
                         <input type="checkbox" class="checkbox" data-id="category" id="music"/>
                         <div class="state">
                             <i class="icon mdi mdi-check"></i>
-                            <label>Music</label>
+                            <label>All Gifts</label>
                         </div>
                         <div class="state p-is-indeterminate">
                             <i class="icon mdi mdi-minus"></i>
@@ -102,10 +101,20 @@
                         </div>
                     </div>
                     </li>
-                    
-                    <li>
-                    <div class="pretty p-icon p-curve p-fill p-has-indeterminate">
-                        <input type="checkbox" class="checkbox" data-id="category" id="nature"/>
+                    <li><div class="pretty p-icon p-curve p-fill p-has-indeterminate">
+                        <input type="checkbox" class="checkbox" data-id="category" id="music"/>
+                        <div class="state">
+                            <i class="icon mdi mdi-check"></i>
+                            <label>Arts + Craft</label>
+                        </div>
+                        <div class="state p-is-indeterminate">
+                            <i class="icon mdi mdi-minus"></i>
+                            <label>Indeterminate</label>
+                        </div>
+                    </div>
+                    </li>
+                    <li><div class="pretty p-icon p-curve p-fill p-has-indeterminate">
+                        <input type="checkbox" class="checkbox" data-id="category" id="music"/>
                         <div class="state">
                             <i class="icon mdi mdi-check"></i>
                             <label>Nature</label>
@@ -119,10 +128,24 @@
                     
                     <li>
                     <div class="pretty p-icon p-curve p-fill p-has-indeterminate">
+                        <input type="checkbox" class="checkbox" data-id="category" id="nature"/>
+                        <div class="state">
+                            <i class="icon mdi mdi-check"></i>
+                            <label>Amusement</label>
+                        </div>
+                        <div class="state p-is-indeterminate">
+                            <i class="icon mdi mdi-minus"></i>
+                            <label>Indeterminate</label>
+                        </div>
+                    </div>
+                    </li>
+                    
+                    <li>
+                    <div class="pretty p-icon p-curve p-fill p-has-indeterminate">
                         <input type="checkbox" class="checkbox" data-id="category" id="science"/>
                         <div class="state">
                             <i class="icon mdi mdi-check"></i>
-                            <label>Science</label>
+                            <label>Learning</label>
                         </div>
                         <div class="state p-is-indeterminate">
                             <i class="icon mdi mdi-minus"></i>
@@ -136,7 +159,7 @@
                         <input type="checkbox" class="checkbox" data-id="category" id="sports"/>
                         <div class="state">
                             <i class="icon mdi mdi-check"></i>
-                            <label>Sports</label>
+                            <label>Outdoors</label>
                         </div>
                         <div class="state p-is-indeterminate">
                             <i class="icon mdi mdi-minus"></i>
@@ -150,7 +173,7 @@
                         <input type="checkbox" class="checkbox" data-id="category" id="cooking"/>
                         <div class="state">
                             <i class="icon mdi mdi-check"></i>
-                            <label>Cooking</label>
+                            <label>Sports</label>
                         </div>
                         <div class="state p-is-indeterminate">
                             <i class="icon mdi mdi-minus"></i>
@@ -219,7 +242,7 @@
                             <input type="checkbox" class="checkbox" data-id="age" id="5"/>
                             <div class="state">
                                 <i class="icon mdi mdi-check"></i>
-                                <label>13+ TRS</label>
+                                <label>13+ YRS</label>
                             </div>
                             <div class="state p-is-indeterminate">
                                 <i class="icon mdi mdi-minus"></i>
@@ -229,69 +252,18 @@
                     </li>
                 </ul>
                 
-                <h5>LOCATION</h5>
-                <ul>
-                    <li>
-                        <div class="pretty p-icon p-curve p-fill p-has-indeterminate">
-                            <input type="checkbox" class="checkbox" data-id="miles" id="1"/>
-                            <div class="state">
-                                <i class="icon mdi mdi-check"></i>
-                                <label> < 1 Miles</label>
-                            </div>
-                            <div class="state p-is-indeterminate">
-                                <i class="icon mdi mdi-minus"></i>
-                                <label>Indeterminate</label>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="pretty p-icon p-curve p-fill p-has-indeterminate">
-                            <input type="checkbox" class="checkbox" data-id="miles" id="2"/>
-                            <div class="state">
-                                <i class="icon mdi mdi-check"></i>
-                                <label> 1 - 5 Miles </label>
-                            </div>
-                            <div class="state p-is-indeterminate">
-                                <i class="icon mdi mdi-minus"></i>
-                                <label>Indeterminate</label>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="pretty p-icon p-curve p-fill p-has-indeterminate">
-                            <input type="checkbox" class="checkbox" data-id="miles" id="3"/>
-                            <div class="state">
-                                <i class="icon mdi mdi-check"></i>
-                                <label> 5 - 10 Miles </label>
-                            </div>
-                            <div class="state p-is-indeterminate">
-                                <i class="icon mdi mdi-minus"></i>
-                                <label>Indeterminate</label>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="pretty p-icon p-curve p-fill p-has-indeterminate">
-                            <input type="checkbox" class="checkbox" data-id="miles" id="4"/>
-                            <div class="state">
-                                <i class="icon mdi mdi-check"></i>
-                                <label> > 10 Miles</label>
-                            </div>
-                            <div class="state p-is-indeterminate">
-                                <i class="icon mdi mdi-minus"></i>
-                                <label>Indeterminate</label>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-                
-                <h6> SEARCH ZIP CODE</h6>
-                <input type="text" class="form-control" id="zip_code" name="zip_code" value="">
             </div>
             
             
             <div class="col-md-10">
                 <div class="row" id="shop-items">
+                    <div class="col-md-4 text-center">
+                        <div id="crecust">
+                        <img src="http://fynches.codeandsilver.com/public/front/img/custAdd.png" data-toggle="modal" data-target="#gift_Add"><br><br>
+                        <p class="text-center" style="font-size:18px" >CREATE <br>CUSTOM GIFT</p>
+                        </div>
+                    </div>
+                    
                 @if(isset($gifts))
                     @foreach($gifts as $gift)
                         <div class="col-md-4 reco_col" id="{{$gift->id}}" style="margin-bottom:20px">
@@ -372,10 +344,10 @@
 				</div>
 				<div class="fheader col-sm-12 col-md-3 col-lg-3 text-right home">
 					<ul class="social">
-						<li><a href="javascript:void(0)"><i class="fab fa-twitter"></i></a></li>
-						<li><a href="javascript:void(0)"><i class="fab fa-facebook-f"></i></a></li>
-						<li><a href="javascript:void(0)"><i class="fab fa-instagram"></i></a></li>
-						<li><a href="javascript:void(0)"><i class="fab fa-pinterest-p"></i></a></li>
+						<li><a href="https://twitter.com/fynches" target="blank"><i class="fab fa-twitter"></i></a></li>
+						<li><a target="_blank" href="https://www.facebook.com/usefynches/"><i class="fab fa-facebook-f"></i></a></li>
+						<li><a target="_blank" href="https://www.instagram.com/fynches/"><i class="fab fa-instagram"></i></a></li>
+						<li><a target="_blank" href="https://www.pinterest.com/usefynches/"><i class="fab fa-pinterest-p"></i></a></li>
 					</ul> 
 				</div>
 			</div>

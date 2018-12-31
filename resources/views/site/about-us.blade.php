@@ -21,7 +21,7 @@
 </section>
 <!-- End -->
 
-@if(count($aboutUs) > 0)
+@if(isset($aboutUs->description) > 0)
 	{!!html_entity_decode($aboutUs->description)!!}
 @else
 	<section class="banner-sec">
@@ -29,7 +29,7 @@
 		<div class="content sign-up-sec">
 			<div class="row">
 				<div class="col-sm-12">
-					<h2>No About Us Added.</h2>
+					<h2></h2>
 				</div>
 			</div>
 		</div>

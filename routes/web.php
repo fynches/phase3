@@ -74,6 +74,7 @@ Route::post('/background-image', 'Site\GiftController@saveBackgroundImages');
 Route::post('/profile-image', 'Site\GiftController@saveProfileImage');
 Route::post('/update-child-zipcode', 'Site\GiftController@updateChildZipcode');
 Route::post('/giftDetails', 'Site\GiftController@giftDetails');
+Route::post('/giftSort', 'Site\GiftController@giftSort');
 
 Route::get('/test', 'Site\ShopController@test');
 

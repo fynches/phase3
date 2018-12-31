@@ -223,7 +223,7 @@
     <div class="container-fluid cont">
         <div class="row" id="added">
             <h5 style="margin:20px;">GIFTS ADDED TO {{strToUpper($gift_page->child->first_name)}}'S PAGE</h5>
-            <div class="all_gifts">
+            <div class="added_gifts">
             @if(isset($added_gifts))
                 @foreach($added_gifts as $gift)
                    
@@ -237,7 +237,7 @@
                                     <div class="col-md-6 text-right">
                                         <div class="col-md-4"><img id="move-{{$gift->id}}" class="draggable" data-id="{{$gift->id}}" src="http://fynches.codeandsilver.com/public/front/img/Move_white.png" style="width:100%"></div>
                                         <div class="col-md-4"><img id="edit-{{$gift->id}}" data-id="{{$gift->id}}" src="http://fynches.codeandsilver.com/public/front/img/edit_white.png" style="width:100%"></div>
-                                        <div class="col-md-4"><img id="move-{{$gift->id}}" data-id="{{$gift->id}}" src="http://fynches.codeandsilver.com/public/front/img/Delete_white.png" style="width:100%"></div>
+                                        <div class="col-md-4"><img id="move-{{$gift->id}}" class="trash" data-id="{{$gift->id}}" src="http://fynches.codeandsilver.com/public/front/img/Delete_white.png" style="width:100%"></div>
                                     </div>
                                 </div>
                                 
@@ -366,10 +366,10 @@
 				</div>
 				<div class="col-sm-3 col-md-3 col-xs-12  home">
 					<ul class="social">
-						<li><a href="javascript:void(0)"><i class="fab fa-twitter"></i></a></li>
-						<li><a href="javascript:void(0)"><i class="fab fa-facebook-f"></i></a></li>
-						<li><a href="javascript:void(0)"><i class="fab fa-instagram"></i></a></li>
-						<li><a href="javascript:void(0)"><i class="fab fa-pinterest-p"></i></a></li>
+						<li><a href="https://twitter.com/fynches" target="blank"><i class="fab fa-twitter"></i></a></li>
+						<li><a target="_blank" href="https://www.facebook.com/usefynches/"><i class="fab fa-facebook-f"></i></a></li>
+						<li><a target="_blank" href="https://www.instagram.com/fynches/"><i class="fab fa-instagram"></i></a></li>
+						<li><a target="_blank" href="https://www.pinterest.com/usefynches/"><i class="fab fa-pinterest-p"></i></a></li>
 					</ul> 
 				</div>
 			</div>

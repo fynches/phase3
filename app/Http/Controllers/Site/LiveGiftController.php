@@ -39,9 +39,9 @@ class LiveGiftController extends Controller
             $child_info =  ChildInfo::where('id', $gift_page->child_info_id)->first();
             $child_image = $child_info->recipient_image;
             
-            if(isset($gift_page->added_gifts)) {
+            if(!empty(unserialize($gift_page->added_gifts))) {
             $added_gifts_ids = unserialize($gift_page->added_gifts);
-            $added_gifts = Gift::whereIn('id',$added_gifts_ids)->get();
+            $added_gifts = Gift::whereIn('id',$added_gifts_ids)->orderByRaw('FIELD(id, '.implode(',', $added_gifts_ids).')')->get();
             }
             
             return view('site.live-gift-page.live-gift', compact('child_info', 'added_gifts', 'gift_page', 'session_view','child_image'));
