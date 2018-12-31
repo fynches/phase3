@@ -13,16 +13,16 @@
 	        <div class="collapse navbar-collapse" id="collapsingNavbar">
 	            <ul class="nav navbar-nav ml-auto">
 	                <li class="nav-item">
-	                    <a class="nav-link" href="javascript:void(0)">ABOUT</a>
+	                    <a class="nav-link" href="/about-us">ABOUT</a>
 	                </li>
 	                <li class="nav-item">
-	                    <a class="nav-link" href="javascript:void(0)">BLOG</a>
+	                    <a class="nav-link" target="_blank" href="https://fynches.com/blog">BLOG</a>
 	                </li>
 	                <li class="nav-item">
 	                    <a class="nav-link" href="javascript:void(0)">CONTACT US</a>
 	                </li>
 	                <li class="nav-item">
-	                    <a class="nav-link" href="javascript:void(0)">HELP</a>
+	                    <a class="nav-link" href="/help">HELP</a>
 	                </li>
 	                <li class="nav-item">
 	                    <a class="nav-link" href="javascript:void(0)">LOGIN</a>

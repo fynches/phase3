@@ -58,10 +58,10 @@
     min-height:100px;
 }
 .check_header .cont{
-    margin: 0 40px;
+    margin: 0 40px !important;
 }
 .checkout_content .cont{
-     margin: 0 40px;
+     margin: 0 40px !important;
 }
 .checkout_content{
     margin-top:50px;
@@ -221,6 +221,28 @@
     margin-top:90px;
 }
 
+.cart_1{
+    display:none;
+    width: 100%;
+    background: black;
+    opacity: 0.7;
+    padding: 60px 100px;
+    height: 250px;
+    position: relative;
+}
+
+.cancel_1{
+    display:none;
+    background: black;
+    color: white;
+    font-size: 17px !important;
+    padding: 10px !important;
+    position: absolute;
+    top: 207px;
+    width: 100%;
+    margin: 0px !important;
+    opacity: 0.7;
+}
 
 #images_gift h5{
     font-size:16px;

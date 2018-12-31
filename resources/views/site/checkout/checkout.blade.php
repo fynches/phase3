@@ -272,6 +272,7 @@
 
 @include('site.signup.signup-modal')
 @include('site.user.signin-modal')
+@include('site.user.password-modal')
 
 @stop
 

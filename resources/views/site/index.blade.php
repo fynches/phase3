@@ -49,8 +49,8 @@
 					<h3>Find a Fynches gift page</h3>
 				</div>
 				<div class="col-sm-12 col-md-7 col-lg-7">
-					<form>
-						<input type="text" name="" placeholder="Search By Hosts Last Name">
+					<form id-"home-search" method="GET" action="/search">
+						<input id="host_name" type="text" name="last_name" placeholder="Search By Hosts Last Name">
 						<button>SEARCH</button>
 					</form>
 				</div>

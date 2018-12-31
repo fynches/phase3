@@ -12,6 +12,33 @@ jQuery(document).ready(function( $ ) {
               count++;
            }
         });
+        
+     
+     
+    $('.hoverimg').mouseenter(function(event) {
+       event.preventDefault();
+        var id = $(this).data( "id" );
+        $('#cartimg-'+id).show();
+        $('#cancel_1-'+id).show();
+    });    
+    
+    $('.hoverimg').mouseleave(function(event) {
+       event.preventDefault();
+        var id = $(this).data( "id" );
+        $('#cartimg-'+id).hide();
+        $('#cancel_1-'+id).hide();
+    });  
+    
+    
+    $(".all_gifts").sortable({
+  
+      axis: "x",
+      revert: true,
+      scroll: false,
+      placeholder: "sortable-placeholder",
+      cursor: "move"
+    
+    });    
     
     $('body').on('click','button[name="add"]',function() {
         var id = $(this).data('id');

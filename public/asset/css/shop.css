@@ -64,7 +64,7 @@
     border: 1px solid #4444ce;
 }
 .shop_experience .cont{
-    margin:0 40px;
+    margin:0 40px !important;
     min-height:250px;
     background: url('http://fynches.codeandsilver.com/public/front/img/party.jpg');
     transition: all 0.3s ease-in-out;
@@ -94,7 +94,7 @@
     font-size:15px;
 }
 .shop_sort .cont{
-    margin:30px 40px;
+    margin:30px 40px !important;
 }
 .shop_sort .cont .col-md-12{
     padding:0px;
@@ -127,7 +127,7 @@
     font-family:'Avenir-Book';
 }
 #shop_cat .cont{
-    margin:0 30px;
+    margin:0 30px !important;
 }
 #shop_cat .icon{
     background:#000;
@@ -160,7 +160,7 @@
   margin:10px;
 }
 .step_1 .cont{
-    margin:0px 40px;
+    margin:0px 40px !important;
 }
 .step_1 .cont h4{
   font-family:'Futura-Medium';
@@ -170,15 +170,15 @@
   border-bottom:2px solid #f2f2f2;
 }
 .step_1 .cont .step_gift{
-    padding:30px 0;
+    padding:30px 0 !important;
     border-bottom:2px solid #f2f2f2;
 }
 
 .step_1 .cont .step_price p{
-    margin:10px 0;
+    margin:10px 0 !important;
 }
 .step_1 .cont #step_amt{
-     margin:10px 0;
+     margin:10px 0 !important;
 }
 
 #tot_amt h1{
@@ -197,7 +197,7 @@
     margin-bottom:30px;
 }
 .gift_message .cont{
-    margin: 0 40px;
+    margin: 0 40px !important;
 }
 .gift_message h5{
     font-family: 'Futura-Medium';
@@ -221,7 +221,7 @@
     padding:30px 0;
 }
 .gift_payment .cont{
-    margin: 0 40px;
+    margin: 0 40px !important;
     margin-bottom:30px;
 }
 .gift_payment h5{
@@ -245,7 +245,7 @@
     border:1px solid black;
 }
 .gift_bill .cont{
-    margin:0 40px;
+    margin:0 40px !important;
 }
 .gift_bill h5{
   font-family: 'Futura-Medium';
@@ -321,6 +321,25 @@
     font-size:24px !important;;
 }
 
+#forgot_password #cont{
+    margin:30px !important;
+}
+#forgot_password #signup-header{
+    font-family: Futura-Medium;
+    font-weight:bold;
+    font-size:30px;
+}
+#forgot_password .para{
+    margin:20px;
+}
+#forgot_password .yellow-submit{
+    border: 1px solid #ffdb4c;
+    background: #ffdb4c;
+    color: #4444ce;
+    font-family: Avenir-Book;
+    padding: 10px 10px;
+    margin: 10px 0px!important;
+}
 
 
 @media only screen and (max-device-width: 746px) {

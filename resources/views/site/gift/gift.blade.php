@@ -223,12 +223,24 @@
     <div class="container-fluid cont">
         <div class="row" id="added">
             <h5 style="margin:20px;">GIFTS ADDED TO {{strToUpper($gift_page->child->first_name)}}'S PAGE</h5>
-            
+            <div class="all_gifts">
             @if(isset($added_gifts))
                 @foreach($added_gifts as $gift)
                    
                         <div class="col-md-3 reco_col pointer" id="{{$gift->id}}">
-                            <div style="position: relative; background: url({{$gift->images->image_urls}}); width:100%; height:250px; background-size:100% 100%; ">
+                            <div id="hoverimg-{{$gift->id}}" class="hoverimg" data-id="{{$gift->id}}" style="position: relative; background: url({{$gift->images->image_urls}}); width:100%; height:250px; background-size:100% 100%; ">
+                                
+                                <div id="cartimg-{{$gift->id}}" class="cart_1" data-id="{{$gift->id}}"></div>
+                                
+                                <div class="row cancel_1"  data-id="{{$gift->id}}" id="cancel_1-{{$gift->id}}">
+                                    <div class="col-md-6 text-left"></div>
+                                    <div class="col-md-6 text-right">
+                                        <div class="col-md-4"><img id="move-{{$gift->id}}" class="draggable" data-id="{{$gift->id}}" src="http://fynches.codeandsilver.com/public/front/img/Move_white.png" style="width:100%"></div>
+                                        <div class="col-md-4"><img id="edit-{{$gift->id}}" data-id="{{$gift->id}}" src="http://fynches.codeandsilver.com/public/front/img/edit_white.png" style="width:100%"></div>
+                                        <div class="col-md-4"><img id="move-{{$gift->id}}" data-id="{{$gift->id}}" src="http://fynches.codeandsilver.com/public/front/img/Delete_white.png" style="width:100%"></div>
+                                    </div>
+                                </div>
+                                
                                 <div style="position: absolute; top: 1em; left: 1em; font-weight: bold; color: #fff;">
                                     <a href="javascript:void(0)" class="favorite-button"><i class="fas fa-heart fa-2x heart-{{$gift->id}}" @if(!in_array($gift->id,unserialize($gift_page->favorites)))  style="color:#fff;" @else style="color:red;" @endif></i></a>
                                 </div>
@@ -255,7 +267,8 @@
                <label>No Gifts Added Yet</label><br>
                <p >Only gifts you add will show up here. Recommended gifts and favourites<br> will not show up on your live gift page unless added</p>
                </div>
-            @endif   
+            @endif
+            </div>
             
         </div>
     </div>
@@ -332,8 +345,6 @@
 
 @include('site.gift.gift-modal')
     <link type="text/css" rel="stylesheet" href="{{ asset('public/asset/css/lightslider.css') }}" />                  
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="{{ asset('public/js/lightslider.js') }}"></script>
 @stop
 
 

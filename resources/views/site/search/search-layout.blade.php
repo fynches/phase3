@@ -50,6 +50,7 @@
 @yield('search_content')
 @yield('footer')
 
+<script src="{{asset('public/js/search.js')}}"></script>
 
 @yield('jss')
 

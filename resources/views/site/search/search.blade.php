@@ -13,12 +13,12 @@
             <div class="col-md-6" id="shop_list" style="font-family: 'Avenir-Book';">
                 <div id="div_top_hypers">
                     <ul id="ul_top_hypers">
-                        <li><a href="">ABOUT</a></li>
-                        <li><a href="">BLOG</a></li>
-                        <li><a href="">CONTACT US</a></li>
-                        <li><a href="">HELP</a></li>
-                        <li><a href="">LOG IN</a></li>
-                        <li style="border: 1px solid #FF0055;border-radius: 25px;"><a href="" style="color:#FF0055">SIGN UP</a></li>
+                        <li><a href="/about-us">ABOUT</a></li>
+                        <li><a href="https://fynches.com/blog/" target="_blank">BLOG</a></li>
+                        <li><a href="/">CONTACT US</a></li>
+                        <li><a href="need-help">HELP</a></li>
+                        <li><a href="/">LOG IN</a></li>
+                        <li style="border: 1px solid #FF0055;border-radius: 25px;"><a href="/" style="color:#FF0055">SIGN UP</a></li>
                     </ul>    
                 </div>
             </div>
@@ -35,26 +35,14 @@
             <div class="form-group col-sm-6 text-center" id="search_input">
                 <div class="inner-addon left-addon">
                       <i class="glyphicon glyphicon-search"></i>
-                      <input type="text" class="form-control" placeholder="Search By Host's Last Name" />
+                      <input type="text" id="page-search" class="form-control" placeholder="Search By Host's Last Name" />
                 </div>
-                
-                <p class="text-center">We Found 1 Gift Page</p>
+                <div class="loading"></div>
+                <p id="search-count" class="text-center">We Found 0 Gift Pages</p>
             </div>
             
-            <div class="row search_row" >
-                <div class="col-md-12" id="search_result">
-                    <div class="col-md-2">
-                        <img src="http://fynches.codeandsilver.com/public/front/img/prof_pic.png" >
-                    </div>
-                    <div class="col-md-8">
-                        <p><bold>Page Title:</bold> Join us for Charlie's Birthday</p>
-                        <p><bold>Host:</bold> Sarah</p>
-                        <p><bold>Child:</bold> Charlie</p>
-                    </div>
-                    <div class="col-md-2">
-                        <button class="btn btn-border btn-purp">VIEW GIFT PAGE</button>
-                    </div>
-                </div>
+            <div id="search-row" class="row search_row" >
+                
             </div>
             
         </div>
